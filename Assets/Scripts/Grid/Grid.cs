@@ -25,6 +25,21 @@ public class Grid : MonoBehaviour {
 		return GridToWorldPosition(ScreenToGridPosition(vector));
 	}
 
+	public bool PlaceTower(GameObject tower, Vector3 position) {
+		GameObject spawnedObject = null;
+		Vector2 gridPos = ScreenToGridPosition(position);
+		if(towers[(int)gridPos.x,(int)gridPos.y] == null)
+		{
+			spawnedObject = tower.GetComponent<CustomTower>().Spawn(GridToWorldPosition(gridPos));
+			towers[(int)gridPos.x,(int)gridPos.y] = spawnedObject;
+		}
+		else 
+		{
+			Debug.Log("Tower Already Placed.");
+		}
+		return spawnedObject == null;
+	}
+
 	// Update is called once per frame
 	void Update () {
 	
