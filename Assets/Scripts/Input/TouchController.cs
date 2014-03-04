@@ -30,12 +30,7 @@ public class TouchController : MonoBehaviour {
 		foreach(InputEvent e in handler.Events){
 			if(e.phase == TouchPhase.Began){
 				Debug.Log(temp);
-<<<<<<< HEAD
 				grid.PlaceTower(temp, e.position);
-				//temp.GetComponent<CustomTower>().Spawn(grid.ScreenToWorldPosition(e.position));
-=======
-				objs.Add(temp.GetComponent<CustomTower>().Spawn(grid.ScreenToWorldPosition(e.position)));
->>>>>>> FETCH_HEAD
 			}
 		}
 	}
