@@ -15,7 +15,7 @@ public class TowerButton : MonoBehaviour {
 	private Rect LeftQuarter = new Rect (0,0,screenwidth/4, screenheight/4);
 	private Rect offscreen2 = new Rect (0,0,screenwidth/4,screenheight);
 	private Rect RightQuarter = new Rect(3*screenwidth/4, 0, screenwidth -3*screenwidth/4, screenheight);
-	private Rect offscreen = new Rect(screenwidth-10, 0, screenwidth, screenheight);
+	private Rect offscreen = new Rect(screenwidth-30, 0, screenwidth, screenheight);
 
 	private Rect current;
 	private Rect current2;
@@ -56,7 +56,7 @@ public class TowerButton : MonoBehaviour {
 		// left side menu
 		scrollPosition = GUI.BeginScrollView(current, scrollPosition, new Rect(0, 0, screenwidth -3*screenwidth/4-20, screenheight*2));
 		// hide and unhide button
-		if (GUI.Button(new Rect(0,0,10,screenheight*2),"->"))
+			if (GUI.Button(new Rect(0,0,30,screenheight*2),"H\nI\nD\nE\n \nB\nU\nT\nT\nO\nN\n"))
 		{
 			if (hidden)
 			{
