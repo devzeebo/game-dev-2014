@@ -22,16 +22,17 @@ public class FollowPath : MonoBehaviour {
 			float distance = Vector2.Distance(gameObject.transform.position, next.position);
 
 			gameObject.LookAt2D(next.position);
-			distance = gameObject.Move(speed, distance);
+			
+			gameObject.MoveUntil(speed, Time.deltaTime, distance, () => {
 
-			if (distance > 0) {
 				next = next.nextNode;
-
-				if (next != null) {
-					gameObject.LookAt2D(next.position);
-					gameObject.Move(speed, distance);
+				if (next == null) {
+					return 0;
 				}
-			}
+
+				gameObject.LookAt2D(next.position);
+				return Vector2.Distance(gameObject.transform.position, next.position);
+			});
 		}
 	}
 }

@@ -19,17 +19,49 @@ public static class Utilities {
 		tower.transform.rotation = Quaternion.EulerAngles(0, 0, rotation);
 	}
 
-    public static float Move(this GameObject obj, float velocity) {
-        obj.transform.Translate(Vector3.right * velocity * Time.deltaTime, Space.Self);
-        return 0;
+    public static void Move(this GameObject obj, float velocity) {
+		Move(obj, velocity, Time.deltaTime);
     }
 
-    public static float Move(this GameObject obj, float velocity, float maxDistance) {
-		float realDistance = velocity * Time.deltaTime;
-		Debug.Log("Velocity: " + realDistance + ", Max: " + maxDistance);
-        float distance = Math.Min(realDistance, maxDistance);
-        obj.transform.Translate(Vector3.right * distance, Space.Self);
+	public static void Move(this GameObject obj, float velocity, float time) {
+		obj.transform.Translate(Vector3.right * velocity * time, Space.Self);
+	}
 
-        return realDistance - maxDistance;
-    }
+	public static void MoveUntil(this GameObject obj, float velocity, float time, float maxDistance, MoveCallback callback) {
+
+		while (time > 0) {
+			float distance = Math.Min(velocity * time, maxDistance);
+			float timeUsed = distance / velocity;
+			time -= timeUsed;
+			obj.Move(velocity, timeUsed);
+
+			if (distance == maxDistance) {
+				maxDistance = callback();
+
+				if (maxDistance <= 0) {
+					break;
+				}
+			}
+		}
+	}
+
+	public delegate float MoveCallback();
+
+	public delegate void CooldownCallback(float timeRemaining);
+
+	public static float Cooldown(float cooldown, float speed, CooldownCallback callback) {
+
+		float time = Time.deltaTime;
+
+		while (time > 0) {
+			time -= cooldown;
+
+			if (time >= 0) {
+				callback(time);
+				cooldown = speed;
+			}
+		}
+
+		return speed + time;
+	}
 }
