@@ -5,9 +5,9 @@ public class TowerBase : MonoBehaviour {
 
 	public TowerModule module;
 
-	float attackSpeedMultiplier = 1f;
+	public float attackSpeedMultiplier = 1f;
 
-	float attackDamageMultiplier = 1f;
+    public float attackDamageMultiplier = 1f;
 
 	float attackCooldown;
 
@@ -21,6 +21,14 @@ public class TowerBase : MonoBehaviour {
 		Vector3 testCenter = new Vector3(0,0,0);
 		module.gameObject.LookAt2D(testCenter);
 	}
+
+    float GetAttackDamage() {
+        return module.weapon.attackDamage * module.attackDamageMultiplier * attackDamageMultiplier;
+    }
+
+    float GetAttackSpeed() {
+        return module.attackSpeed * module.weapon.attackSpeedMultiplier * attackSpeedMultiplier;
+    }
 
 	void Attack() {
 		attackCooldown = 100f / (attackSpeedMultiplier * module.attackSpeed * module.weapon.attackSpeedMultiplier);
