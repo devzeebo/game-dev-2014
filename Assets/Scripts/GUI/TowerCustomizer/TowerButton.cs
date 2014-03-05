@@ -20,6 +20,10 @@ public class TowerButton : MonoBehaviour {
 	private Rect current;
 	private Rect current2;
 	public bool hidden = false;
+	public Texture getTexture()
+	{
+		return btnTexture3;
+	}
 
 	void Start() {
 		current = RightQuarter;
@@ -39,11 +43,13 @@ public class TowerButton : MonoBehaviour {
 			return;
 		}
 		// display button
+			/*
 		if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/4-50, 100, 100), btnTexture3))
 			// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
 		{
 			Debug.Log("Clicked the button with an image");
 		}
+		//*/
 		/*
 		if (GUI.Button(new Rect(10, 565, 50, 30), "Click"))
 			Debug.Log("Clicked the button with text");

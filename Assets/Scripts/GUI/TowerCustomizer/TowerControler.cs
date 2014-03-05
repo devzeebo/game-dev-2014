@@ -20,11 +20,27 @@ public class TowerControler : MonoBehaviour {
 	void OnGUI(){
 		if (!TowerBase.GetComponent<TowerButton>().hidden &&!TowerModule.GetComponent<TowerButton>().hidden &&!TowerWeapon.GetComponent<TowerButton>().hidden)
 		{
-		if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2-50, 100, 100), "Test Button"))
+			if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2-50, 100, 100), TowerBase.GetComponent<TowerButton>().getTexture()))
 			// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
 		{
 			Debug.Log("Clicked the button with an image");
+				TowerModule.GetComponent<TowerButton>().getTexture();
+				TowerWeapon.GetComponent<TowerButton>().getTexture();
 		}
+			if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2-50, 100, 100), TowerModule.GetComponent<TowerButton>().getTexture()))
+				// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
+			{
+				Debug.Log("Clicked the button with an image");
+				TowerModule.GetComponent<TowerButton>().getTexture();
+				TowerWeapon.GetComponent<TowerButton>().getTexture();
+			}
+			if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2-50, 100, 100), TowerWeapon.GetComponent<TowerButton>().getTexture()))
+				// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
+			{
+				Debug.Log("Clicked the button with an image");
+				TowerModule.GetComponent<TowerButton>().getTexture();
+				TowerWeapon.GetComponent<TowerButton>().getTexture();
+			}
 			if (GUI.Button(new Rect(3*screenwidth/4-buttonwidth , 0, buttonwidth, screenheight/3), "b\na\ns\ne"))
 		{
 			Debug.Log("Clicked the button with an image");
