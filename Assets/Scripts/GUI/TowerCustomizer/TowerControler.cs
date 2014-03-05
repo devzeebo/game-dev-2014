@@ -45,8 +45,9 @@ public class TowerControler : MonoBehaviour {
 				TowerBase.GetComponent<TowerButton>().getTexture();
 				TowerModule.GetComponent<TowerButton>().getTexture();
 				TowerWeapon.GetComponent<TowerButton>().getTexture();
+				// use get component to get the prefab info for whichever prefab is selected
 			}
-			if (GUI.Button(new Rect(3*screenwidth/4-buttonwidth , 0, buttonwidth, screenheight/3), "b\na\ns\ne"))
+			if (GUI.Button(new Rect(3*screenwidth/4-buttonwidth , 2*screenheight/3, buttonwidth, screenheight/3), "b\na\ns\ne"))
 		{
 			Debug.Log("Clicked the button with an image");
 			TowerBase.GetComponent<TowerButton>().Selected = true;
@@ -62,7 +63,7 @@ public class TowerControler : MonoBehaviour {
 			TowerWeapon.GetComponent<TowerButton>().Selected = false;
 			//btnTexture3=btnTexture;
 		}
-			if (GUI.Button(new Rect(3*screenwidth/4-buttonwidth , 2*screenheight/3, buttonwidth, screenheight/3), "w\ne\na\np\no\nn"))
+			if (GUI.Button(new Rect(3*screenwidth/4-buttonwidth , 0, buttonwidth, screenheight/3), "w\ne\na\np\no\nn"))
 		{
 			Debug.Log("Clicked the button with an image");
 			TowerBase.GetComponent<TowerButton>().Selected = false;

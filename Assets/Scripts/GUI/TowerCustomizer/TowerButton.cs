@@ -62,6 +62,7 @@ public class TowerButton : MonoBehaviour {
 		// left side menu
 		scrollPosition = GUI.BeginScrollView(current, scrollPosition, new Rect(0, 0, screenwidth -3*screenwidth/4-20, screenheight*2));
 		// hide and unhide button
+			/*
 			if (GUI.Button(new Rect(0,0,30,screenheight*2),"H\nI\nD\nE\n \nB\nU\nT\nT\nO\nN\n"))
 		{
 			if (hidden)
@@ -77,6 +78,7 @@ public class TowerButton : MonoBehaviour {
 				// tell tower controler to hide all the ones
 			}
 		}
+			//*/
 		// component selection buttons
 		if (GUI.Button(new Rect(100 , 50, 100, 100), btnTexture))
 		{
