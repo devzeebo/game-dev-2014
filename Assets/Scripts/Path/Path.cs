@@ -17,6 +17,7 @@ public class Path : MonoBehaviour {
             if (last != null) {
                 last.nextNode = next;
             }
+			last = next;
         }
 
         last = nodes[nodes.Count - 1];
@@ -24,6 +25,7 @@ public class Path : MonoBehaviour {
             PathNode next = new PathNode(nodes[x].position);
             nodes.Add(next);
             last.nextNode = next;
+			last = next;
         }
 
 		FirstNode = nodes[0];

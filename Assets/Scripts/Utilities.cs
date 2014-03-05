@@ -25,9 +25,11 @@ public static class Utilities {
     }
 
     public static float Move(this GameObject obj, float velocity, float maxDistance) {
-        float distance = Math.Min(velocity * Time.deltaTime, maxDistance);
+		float realDistance = velocity * Time.deltaTime;
+		Debug.Log("Velocity: " + realDistance + ", Max: " + maxDistance);
+        float distance = Math.Min(realDistance, maxDistance);
         obj.transform.Translate(Vector3.right * distance, Space.Self);
 
-        return distance;
+        return realDistance - maxDistance;
     }
 }

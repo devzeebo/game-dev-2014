@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FollowPath : MonoBehaviour {
 
-	public Path path;
+	private Path path;
 
 	private PathNode next;
 
@@ -17,13 +17,20 @@ public class FollowPath : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float distance = Vector2.Distance(gameObject.transform.position, next.position);
+		if (next != null) {
 
-		while (distance > 0) {
+			float distance = Vector2.Distance(gameObject.transform.position, next.position);
+
+			gameObject.LookAt2D(next.position);
 			distance = gameObject.Move(speed, distance);
 
 			if (distance > 0) {
 				next = next.nextNode;
+
+				if (next != null) {
+					gameObject.LookAt2D(next.position);
+					gameObject.Move(speed, distance);
+				}
 			}
 		}
 	}
