@@ -25,7 +25,7 @@ public class TouchController : MonoBehaviour {
 
         foreach (GameObject obj in objs) {
             obj.LookAt2D(grid.ScreenToWorldPosition(Input.mousePosition));
-            obj.Move(100f);//, Vector3.Distance(obj.transform.position, grid.ScreenToWorldPosition(Input.mousePosition)));
+            obj.Move(100f, Vector3.Distance(obj.transform.position, grid.ScreenToWorldPosition(Input.mousePosition)));
         }
 
 		foreach(InputEvent e in handler.Events){

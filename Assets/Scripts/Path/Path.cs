@@ -25,6 +25,13 @@ public class Path : MonoBehaviour {
             nodes.Add(next);
             last.nextNode = next;
         }
+
+		FirstNode = nodes[0];
+	}
+
+	public PathNode FirstNode {
+		get;
+		private set;
 	}
 	
 	// Update is called once per frame
