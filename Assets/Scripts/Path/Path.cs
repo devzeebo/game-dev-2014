@@ -10,8 +10,20 @@ public class Path : MonoBehaviour {
 	void Start () {
         nodes = new List<PathNode>();
 
+        PathNode last = null;
         for (int x = 0; x < transform.childCount; x++) {
-            nodes.Add(new PathNode());
+            PathNode next = new PathNode(transform.GetChild(x).position);
+            nodes.Add(next);
+            if (last != null) {
+                last.nextNode = next;
+            }
+        }
+
+        last = nodes[nodes.Count - 1];
+        for (int x = nodes.Count - 2; x >= 0; x--) {
+            PathNode next = new PathNode(nodes[x].position);
+            nodes.Add(next);
+            last.nextNode = next;
         }
 	}
 	

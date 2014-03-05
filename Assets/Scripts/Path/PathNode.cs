@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PathNode : MonoBehaviour {
+public class PathNode {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public Vector3 position;
+
+    public PathNode nextNode;
+
+    public PathNode(Vector3 vector) {
+        position = vector;
+    }
 }

@@ -40,7 +40,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e0f9c90805b314484d2002ad0dfb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,8 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e0f9c90805b314484d2002ad0dfb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> 9f1a1bfe05a37baa99c77af6c8bf71bfefb29bc9
   projectilePrototype: {fileID: 0}
   attackDamage: 10
   attackSpeedMultiplier: 1
