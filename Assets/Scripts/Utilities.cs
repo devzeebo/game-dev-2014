@@ -19,7 +19,15 @@ public static class Utilities {
 		tower.transform.rotation = Quaternion.EulerAngles(0, 0, rotation);
 	}
 
-    public static void Move(this GameObject obj, float velocity) {
+    public static float Move(this GameObject obj, float velocity) {
         obj.transform.Translate(Vector3.right * velocity * Time.deltaTime, Space.Self);
+        return 0;
+    }
+
+    public static float Move(this GameObject obj, float velocity, float maxDistance) {
+        float distance = Math.Min(velocity * Time.deltaTime, maxDistance);
+        obj.transform.Translate(Vector3.right * distance, Space.Self);
+
+        return distance;
     }
 }
