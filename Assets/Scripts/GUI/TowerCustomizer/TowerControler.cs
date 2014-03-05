@@ -20,24 +20,29 @@ public class TowerControler : MonoBehaviour {
 	void OnGUI(){
 		if (!TowerBase.GetComponent<TowerButton>().hidden &&!TowerModule.GetComponent<TowerButton>().hidden &&!TowerWeapon.GetComponent<TowerButton>().hidden)
 		{
-			if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2-50, 100, 100), TowerBase.GetComponent<TowerButton>().getTexture()))
+			if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2-100, 100, 100), TowerBase.GetComponent<TowerButton>().getTexture()))
 			// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
 		{
 			Debug.Log("Clicked the button with an image");
-				TowerModule.GetComponent<TowerButton>().getTexture();
-				TowerWeapon.GetComponent<TowerButton>().getTexture();
+
 		}
-			if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2-50, 100, 100), TowerModule.GetComponent<TowerButton>().getTexture()))
+			if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2-100, 100, 100), TowerModule.GetComponent<TowerButton>().getTexture()))
 				// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
 			{
 				Debug.Log("Clicked the button with an image");
-				TowerModule.GetComponent<TowerButton>().getTexture();
-				TowerWeapon.GetComponent<TowerButton>().getTexture();
+
 			}
-			if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2-50, 100, 100), TowerWeapon.GetComponent<TowerButton>().getTexture()))
+			if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2-100, 100, 100), TowerWeapon.GetComponent<TowerButton>().getTexture()))
 				// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
 			{
 				Debug.Log("Clicked the button with an image");
+
+			}
+			if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2+100, 100, 100),"Save Tower"))
+				// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
+			{
+				Debug.Log("Clicked the button with an image");
+				TowerBase.GetComponent<TowerButton>().getTexture();
 				TowerModule.GetComponent<TowerButton>().getTexture();
 				TowerWeapon.GetComponent<TowerButton>().getTexture();
 			}
