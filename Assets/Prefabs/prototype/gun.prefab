@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e0f9c90805b314484d2002ad0dfb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrototype: {fileID: 0}
+  projectilePrototype: {fileID: 100000, guid: 72c98d3b9009f461fa71c978122581d4, type: 2}
   attackDamage: 10
   attackSpeedMultiplier: 1
 --- !u!212 &21200000
