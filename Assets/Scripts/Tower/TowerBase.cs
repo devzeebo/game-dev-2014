@@ -18,7 +18,8 @@ public class TowerBase : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		Vector3 testCenter = new Vector3(0,0,0);
+		module.gameObject.LookAt2D(testCenter);
 	}
 
 	void Attack() {
