@@ -5,6 +5,8 @@ public class TowerBase : MonoBehaviour {
 
 	public TowerModule module;
 
+	private GameObject enemy;
+
 	public float attackSpeedMultiplier = 1f;
 
 	public float attackDamageMultiplier = 1f;
@@ -13,13 +15,13 @@ public class TowerBase : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		enemy = GameObject.Find("enemy");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 testCenter = new Vector3(0,0,0);
-		module.gameObject.LookAt2D(testCenter);
+		Debug.Log(enemy.transform.position);
+		module.gameObject.LookAt2D(enemy);
 	}
 
     float GetAttackDamage() {
