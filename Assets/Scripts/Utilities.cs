@@ -20,7 +20,6 @@ public static class Utilities {
 	}
 
     public static void Move(this GameObject obj, float velocity) {
-
-        obj.transform.Translate(Vector3.forward * velocity, Space.Self);
+        obj.transform.Translate(Vector3.right * velocity * Time.deltaTime, Space.Self);
     }
 }
