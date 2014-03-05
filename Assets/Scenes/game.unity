@@ -206,6 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a87c00b8e615a49b3d4da785e9604e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  height: 10
+  width: 15
   offsetVector: {x: 7.5, y: 5, z: 10}
 --- !u!114 &906515113
 MonoBehaviour:

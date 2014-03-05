@@ -4,10 +4,12 @@ using System.Collections;
 public class Grid : MonoBehaviour {
 
 	private GameObject[,] towers;
+	public int height = 10;
+	public int width = 15;
 	public Vector3 offsetVector = new Vector3(7.5f,5,10);
 	// Use this for initialization
 	void Start () {
-		towers = new GameObject[10,15];
+		towers = new GameObject[width,height]; 
 	}
 
 	public Vector2 ScreenToGridPosition(Vector3 vector)
@@ -28,12 +30,17 @@ public class Grid : MonoBehaviour {
 	public bool PlaceTower(GameObject tower, Vector3 position) {
 		GameObject spawnedObject = null;
 		Vector2 gridPos = ScreenToGridPosition(position);
-		if(towers[(int)gridPos.x,(int)gridPos.y] == null)
+		Debug.Log(gridPos);
+		if(gridPos.x >= width || gridPos.y >= height || gridPos.x < 0 || gridPos.y < 0)
+		{
+			Debug.Log("Outisde Grid");
+		}
+		else if(towers[(int)gridPos.x,(int)gridPos.y] == null)
 		{
 			spawnedObject = tower.GetComponent<CustomTower>().Spawn(GridToWorldPosition(gridPos));
 			towers[(int)gridPos.x,(int)gridPos.y] = spawnedObject;
 		}
-		else 
+		else
 		{
 			Debug.Log("Tower Already Placed.");
 		}
