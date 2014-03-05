@@ -27,6 +27,10 @@ public class Grid : MonoBehaviour {
 		return GridToWorldPosition(ScreenToGridPosition(vector));
 	}
 
+    public GameObject GetAt(int x, int y) {
+        return towers[x, y];
+    }
+
 	public bool PlaceTower(GameObject tower, Vector3 position) {
 		GameObject spawnedObject = null;
 		Vector2 gridPos = ScreenToGridPosition(position);
@@ -44,7 +48,7 @@ public class Grid : MonoBehaviour {
 		{
 			Debug.Log("Tower Already Placed.");
 		}
-		return spawnedObject == null;
+		return spawnedObject != null;
 	}
 
 	// Update is called once per frame

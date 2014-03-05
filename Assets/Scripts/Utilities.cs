@@ -18,4 +18,9 @@ public static class Utilities {
 		float rotation = Mathf.Atan2(vector.y - tower.transform.position.y, vector.x - tower.transform.position.x);
 		tower.transform.rotation = Quaternion.EulerAngles(0, 0, rotation);
 	}
+
+    public static void Move(this GameObject obj, float velocity) {
+
+        obj.transform.Translate(Vector3.forward * velocity, Space.Self);
+    }
 }

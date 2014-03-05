@@ -23,10 +23,19 @@ public class TouchController : MonoBehaviour {
 	void Update () {
 		handler.handleInput();
 
+        foreach (GameObject obj in objs) {
+            obj.LookAt2D(grid.ScreenToWorldPosition(Input.mousePosition));
+        }
+
 		foreach(InputEvent e in handler.Events){
 			if(e.phase == TouchPhase.Began){
 				Debug.Log(temp);
-				grid.PlaceTower(temp, e.position);
+				bool placed = grid.PlaceTower(temp, e.position);
+
+                if (placed) {
+                    Vector2 pos = grid.ScreenToGridPosition(e.position);
+                    objs.Add(grid.GetAt((int)pos.x, (int)pos.y));
+                }
 			}
 		}
 	}
