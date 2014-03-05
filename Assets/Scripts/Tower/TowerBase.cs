@@ -7,9 +7,13 @@ public class TowerBase : MonoBehaviour {
 
 	public float attackSpeedMultiplier = 1f;
 
+<<<<<<< HEAD
+	public float attackDamageMultiplier = 1f;
+=======
     public float attackDamageMultiplier = 1f;
+>>>>>>> 9f1a1bfe05a37baa99c77af6c8bf71bfefb29bc9
 
-	float attackCooldown;
+	public float attackCooldown;
 
 	// Use this for initialization
 	void Start () {
