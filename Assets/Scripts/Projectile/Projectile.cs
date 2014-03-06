@@ -3,22 +3,24 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour {
 
-	private GameObject enemy;
+	private float Damage;
 
 	public float speed = 3f;
 	Vector3 origin;
 
 	// Use this for initialization
 	void Start () {
-		enemy = GameObject.Find("enemy");
-		Vector3 center = new Vector3(0,0,0);
 		origin = transform.position;
 	}
-	
+
+	public void SetDamage(float damage) {
+		Damage = damage;
+	}
+
 	// Update is called once per frame
 	void Update () {
 
-		if (Vector2.Distance(gameObject.transform.position, origin) > 3) {
+		if (Vector2.Distance(gameObject.transform.position, origin) > 10) {
 			Destroy(gameObject);
 		}
 
@@ -26,8 +28,8 @@ public class Projectile : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other)   {
-		Debug.Log("COLLIDE");
-		Destroy(other.gameObject);
+		other.gameObject.GetComponent<Health>().Damage(Damage);
+		Destroy(gameObject);
 	}
 }
 

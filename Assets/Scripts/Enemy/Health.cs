@@ -19,7 +19,7 @@ public class Health : MonoBehaviour {
 		HealthBar.transform.localScale = new Vector3(1f, health / 100);
 	}
 
-	float Damage(float damage) {
+	public float Damage(float damage) {
 		health -= damage;
 		if (health <= 0) {
 			Destroy(gameObject);

@@ -19,6 +19,5 @@ public class WaveManager : Wave {
 			cooldown = spawnSpeed;
 			GameObject.Instantiate(EnemyPrefab, path.FirstNode.position - new Vector3(1, 0, 0), Quaternion.identity);
 		}
-		Debug.Log(cooldown);
 	}
 }

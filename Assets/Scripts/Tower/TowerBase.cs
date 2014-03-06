@@ -18,26 +18,37 @@ public class TowerBase : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if(GameObject.Find("enemy") != null){
-			enemy = GameObject.Find("enemy");
-		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//Debug.Log(attackCooldown);
 
-
-		if(enemy.gameObject != null) {
+		if(enemy != null) {
 			module.gameObject.LookAt2D(enemy);
-			if (Vector3.Distance(transform.position, enemy.transform.position)<range){
+			if (Vector3.Distance(transform.position, enemy.transform.position) < range){
 				Attack();
 			}
+			else {
+				enemy = null;
+			}
 		}
-		else
+		
+		if (enemy == null)
 		{
-			Vector3 center = new Vector3(0,0,0);
-			module.gameObject.LookAt2D(center);
+			GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
+			if (enemies.Length > 0) {
+				GameObject closest = null;
+				float distance = float.MaxValue;
+				for (int x = 0; x < enemies.Length; x++) {
+					float dist = Vector3.Distance(transform.position, enemies[x].transform.position);
+					if (dist < distance) {
+						distance = dist;
+						closest = enemies[x];
+					}
+				}
+				enemy = closest;
+				module.gameObject.LookAt2D(enemy);
+			}
 		}
 	}
 
@@ -49,11 +60,22 @@ public class TowerBase : MonoBehaviour {
 		return 100f / (attackSpeedMultiplier * module.attackSpeed * module.weapon.attackSpeedMultiplier);
     }
 
-	public virtual void Attack() {
-
-		attackCooldown = 100f / (attackSpeedMultiplier * module.attackSpeed * module.weapon.attackSpeedMultiplier);
-
+	public virtual GameObject SpawnProjectile() {
 		GameObject bullet = (GameObject)GameObject.Instantiate(module.weapon.projectilePrototype, transform.position, Quaternion.identity);
-		bullet.LookAt2D(enemy);
+		bullet.GetComponent<Projectile>().SetDamage(GetAttackDamage());
+		return bullet;
+	}
+
+	public void Attack() {
+
+		attackCooldown -= Time.deltaTime;
+
+		if (attackCooldown < 0) {
+			Debug.Log("Spawn");
+			attackCooldown = GetAttackSpeed();
+
+			GameObject bullet = SpawnProjectile();
+			bullet.LookAt2D(enemy);
+		}
 	}
 }

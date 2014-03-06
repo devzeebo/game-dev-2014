@@ -40,9 +40,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   module: {fileID: 0}
+  enemy: {fileID: 0}
   attackSpeedMultiplier: 1
   attackDamageMultiplier: 1
-  attackCooldown: 100
+  attackCooldown: 0
   range: 5
 --- !u!212 &21200000
 SpriteRenderer:
