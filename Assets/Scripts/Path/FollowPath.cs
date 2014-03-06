@@ -27,6 +27,7 @@ public class FollowPath : MonoBehaviour {
 
 				next = next.nextNode;
 				if (next == null) {
+					Destroy(gameObject);
 					return 0;
 				}
 
