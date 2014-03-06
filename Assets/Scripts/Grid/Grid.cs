@@ -34,7 +34,7 @@ public class Grid : MonoBehaviour {
 	public bool PlaceTower(GameObject tower, Vector3 position) {
 		GameObject spawnedObject = null;
 		Vector2 gridPos = ScreenToGridPosition(position);
-		Debug.Log(gridPos);
+		//Debug.Log(gridPos);
 		if(gridPos.x >= width || gridPos.y >= height || gridPos.x < 0 || gridPos.y < 0)
 		{
 			Debug.Log("Outisde Grid");

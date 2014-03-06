@@ -25,7 +25,7 @@ public class TouchController : MonoBehaviour {
 
 		foreach(InputEvent e in handler.Events){
 			if(e.phase == TouchPhase.Began){
-				Debug.Log(temp);
+				//Debug.Log(temp);
 				bool placed = grid.PlaceTower(temp, e.position);
 
                 if (placed) {

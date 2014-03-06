@@ -17,17 +17,27 @@ public class TowerBase : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		enemy = GameObject.Find("enemy");
+		if(GameObject.Find("enemy") != null){
+			enemy = GameObject.Find("enemy");
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(attackCooldown);
-		module.gameObject.LookAt2D(enemy);
-		if (Vector3.Distance(transform.position, enemy.transform.position)<range){
-			Attack();
-		}
+		//Debug.Log(attackCooldown);
 
+
+		if(enemy.gameObject != null) {
+			module.gameObject.LookAt2D(enemy);
+			if (Vector3.Distance(transform.position, enemy.transform.position)<range){
+				Attack();
+			}
+		}
+		else
+		{
+			Vector3 center = new Vector3(0,0,0);
+			module.gameObject.LookAt2D(center);
+		}
 	}
 
     float GetAttackDamage() {
@@ -35,12 +45,13 @@ public class TowerBase : MonoBehaviour {
     }
 
     float GetAttackSpeed() {
-        return module.attackSpeed * module.weapon.attackSpeedMultiplier * attackSpeedMultiplier;
+		return 100f / (attackSpeedMultiplier * module.attackSpeed * module.weapon.attackSpeedMultiplier);
     }
 
 	void Attack() {
 
 		attackCooldown = 100f / (attackSpeedMultiplier * module.attackSpeed * module.weapon.attackSpeedMultiplier);
+
 		GameObject bullet = (GameObject)GameObject.Instantiate(module.weapon.projectilePrototype, transform.position, Quaternion.identity);
 		bullet.LookAt2D(enemy);
 	}
