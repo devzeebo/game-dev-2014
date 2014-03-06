@@ -84,7 +84,7 @@ GameObject:
   - 4: {fileID: 866171697}
   - 114: {fileID: 866171698}
   m_Layer: 0
-  m_Name: TowerWeaponControler
+  m_Name: TowerWeaponController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,7 @@ GameObject:
   - 4: {fileID: 1456985762}
   - 114: {fileID: 1456985763}
   m_Layer: 0
-  m_Name: TowerBaseControler
+  m_Name: TowerBaseController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +215,7 @@ GameObject:
   - 4: {fileID: 1909310371}
   - 114: {fileID: 1909310372}
   m_Layer: 0
-  m_Name: TowerModuleControler
+  m_Name: TowerModuleController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

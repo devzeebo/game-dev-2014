@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TowerControler : MonoBehaviour {
+public class TowerController : MonoBehaviour {
 	public GameObject TowerBase;
 	public GameObject TowerModule;
 	public GameObject TowerWeapon;
@@ -38,13 +38,15 @@ public class TowerControler : MonoBehaviour {
 				Debug.Log("Clicked the button with an image");
 
 			}
-			if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2+100, 100, 100),"Save Tower"))
+			if (GUI.Button(new Rect(screenwidth/2-50 , screenheight/2+100, 100, 100),"Use Tower"))
 				// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
 			{
 				Debug.Log("Clicked the button with an image");
 				TowerBase.GetComponent<TowerButton>().getTexture();
 				TowerModule.GetComponent<TowerButton>().getTexture();
 				TowerWeapon.GetComponent<TowerButton>().getTexture();
+				Application.LoadLevel(2);
+
 				// use get component to get the prefab info for whichever prefab is selected
 			}
 			if (GUI.Button(new Rect(3*screenwidth/4-buttonwidth , 2*screenheight/3, buttonwidth, screenheight/3), "b\na\ns\ne"))
