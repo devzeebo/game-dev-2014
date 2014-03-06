@@ -40,7 +40,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerBase: {fileID: 100000, guid: fb87a9f9c50dcd745b9705c339457902, type: 2}
   towerModule: {fileID: 100000, guid: d1e946dcd0ad27f45accc159cd138bf3, type: 2}
-  towerWeapon: {fileID: 100000, guid: c1309ad0211b03f419c81b0d07622139, type: 2}
+  towerWeapon: {fileID: 100000, guid: efc43a94aa7e4494dbdd1e2c9de4bf4e, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
