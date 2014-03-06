@@ -295,6 +295,7 @@ GameObject:
   - 114: {fileID: 906515113}
   - 114: {fileID: 906515112}
   - 114: {fileID: 906515111}
+  - 114: {fileID: 906515114}
   m_Layer: 0
   m_Name: Global
   m_TagString: Untagged
@@ -351,6 +352,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputDeadzone: .5
+--- !u!114 &906515114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 906515109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2e581ce25b4f94b950d6c7ba798a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1071523857
 GameObject:
   m_ObjectHideFlags: 0
