@@ -10,6 +10,13 @@ public class AoETower : TowerBase {
 		bullet.transform.localScale += new Vector3(3f,3f,0);
 		bullet.GetComponent<Projectile>().speed = 0;
 
+		StartCoroutine(KillBullet(bullet.GetComponent<Projectile>()));
+
 		return bullet;
+	}
+
+	public IEnumerator KillBullet(Projectile go) {
+		yield return new WaitForSeconds(0.01f);
+		go.DestroyNextUpdate();
 	}
 }

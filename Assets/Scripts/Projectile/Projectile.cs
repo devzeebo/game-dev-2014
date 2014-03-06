@@ -20,16 +20,29 @@ public class Projectile : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Vector2.Distance(gameObject.transform.position, origin) > 10) {
+		if (destroy) {
 			Destroy(gameObject);
 		}
+		else {
+			if (Vector2.Distance(gameObject.transform.position, origin) > 10) {
+				Destroy(gameObject);
+			}
 
-		gameObject.Move(speed);
+			gameObject.Move(speed);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)   {
-		other.gameObject.GetComponent<Health>().Damage(Damage);
+		if (other != null && other.gameObject != null && other.gameObject.GetComponent<Health>() != null) {
+			other.gameObject.GetComponent<Health>().Damage(Damage);
+		}
 		Destroy(gameObject);
+	}
+
+	private bool destroy;
+
+	public void DestroyNextUpdate() {
+		destroy = true;
 	}
 }
 

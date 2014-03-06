@@ -70,8 +70,9 @@ public class TowerBase : MonoBehaviour {
 
 		attackCooldown -= Time.deltaTime;
 
+		Debug.Log(attackCooldown);
 		if (attackCooldown < 0) {
-			Debug.Log("Spawn");
+			
 			attackCooldown = GetAttackSpeed();
 
 			GameObject bullet = SpawnProjectile();

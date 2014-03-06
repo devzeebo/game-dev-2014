@@ -41,8 +41,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   module: {fileID: 0}
   enemy: {fileID: 0}
-  attackSpeedMultiplier: 1
-  attackDamageMultiplier: 1
+  attackSpeedMultiplier: 10
+  attackDamageMultiplier: .100000001
   attackCooldown: 0
   range: 3
 --- !u!212 &21200000
