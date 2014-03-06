@@ -5,6 +5,19 @@ using System;
 public static class Utilities {
 	private static DateTime _1970 = new DateTime(1970, 1, 1);
 
+    private static Vector3 ScreenToWorldScale = new Vector3(1, -1, -0.1f);
+	public static Vector3 ScreenToWorld(Vector2 screen)
+	{
+        Vector3 pos = Camera.main.ScreenToWorldPoint(screen);
+        pos.Scale(ScreenToWorldScale);
+        return pos;
+	}
+
+	public static Vector2 WorldToScreen (Vector3 world)
+	{
+		return Camera.main.WorldToScreenPoint(world);
+	}
+
 	public static long GetCurrentTimeMillis() {
 		return (long)((DateTime.UtcNow - _1970).TotalMilliseconds);
 	}

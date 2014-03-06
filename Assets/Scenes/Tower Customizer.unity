@@ -112,11 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f4361271af3d24d8be331eb8fb182b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Selected: 0
-  prefab: {fileID: 100000, guid: c1309ad0211b03f419c81b0d07622139, type: 2}
-  prefab2: {fileID: 100000, guid: efc43a94aa7e4494dbdd1e2c9de4bf4e, type: 2}
+  controller: {fileID: 0}
   scrollPosition: {x: 0, y: 0}
-  hidden: 0
+  TowerComponents:
+  - {fileID: 100000, guid: c1309ad0211b03f419c81b0d07622139, type: 2}
+  - {fileID: 100000, guid: efc43a94aa7e4494dbdd1e2c9de4bf4e, type: 2}
+  Module: Weapon
 --- !u!1 &1456985761
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,11 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f4361271af3d24d8be331eb8fb182b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Selected: 0
-  prefab: {fileID: 100000, guid: fb87a9f9c50dcd745b9705c339457902, type: 2}
-  prefab2: {fileID: 100000, guid: 99bbf09400a1bc046828db8b9cb05a24, type: 2}
+  controller: {fileID: 0}
   scrollPosition: {x: 0, y: 0}
-  hidden: 0
+  TowerComponents:
+  - {fileID: 100000, guid: fb87a9f9c50dcd745b9705c339457902, type: 2}
+  - {fileID: 100000, guid: 99bbf09400a1bc046828db8b9cb05a24, type: 2}
+  Module: Base
 --- !u!1 &1603075416
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +172,7 @@ GameObject:
   - 4: {fileID: 1603075418}
   - 114: {fileID: 1603075417}
   m_Layer: 0
-  m_Name: Tower Customizer Controler
+  m_Name: Tower Customizer Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,6 +193,9 @@ MonoBehaviour:
   TowerModule: {fileID: 1909310370}
   TowerWeapon: {fileID: 866171696}
   hidden2: 0
+  WorkingTower: {fileID: 0}
+  WorkingTowerSpawn: {fileID: 0}
+  WorldCenter: {x: 0, y: 0, z: 0}
 --- !u!4 &1603075418
 Transform:
   m_ObjectHideFlags: 0
@@ -243,11 +248,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f4361271af3d24d8be331eb8fb182b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Selected: 0
-  prefab: {fileID: 100000, guid: d1e946dcd0ad27f45accc159cd138bf3, type: 2}
-  prefab2: {fileID: 100000, guid: 5985ad27642d9654c947388a511388c6, type: 2}
+  controller: {fileID: 0}
   scrollPosition: {x: 0, y: 0}
-  hidden: 0
+  TowerComponents:
+  - {fileID: 100000, guid: d1e946dcd0ad27f45accc159cd138bf3, type: 2}
+  - {fileID: 100000, guid: 5985ad27642d9654c947388a511388c6, type: 2}
+  Module: Module
 --- !u!1 &2048035433
 GameObject:
   m_ObjectHideFlags: 0

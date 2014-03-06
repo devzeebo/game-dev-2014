@@ -2,20 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class TowerSelection : MonoBehaviour {
+public class TowerSelectionMenu : MonoBehaviour {
 
-	List<CustomTower> towers;
+	public List<CustomTower> towers;
 
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad(gameObject);
 		instance = this;
 
-		towers = new List<CustomTower>(8);
+		//towers = new List<CustomTower>(8);
 	}
 
-	private static TowerSelection instance;
-	public static TowerSelection Instance {
+	private static TowerSelectionMenu instance;
+	public static TowerSelectionMenu Instance {
 		get {
 			return instance;
 		}

@@ -6,6 +6,21 @@ public static class GUIUtilities {
 
 	private static Dictionary<string, GuiPosition> animations;
 
+	public static Rect CenteredRect(this MonoBehaviour behaviour, float x, float y, float width, float height)
+	{
+		return new Rect(x-width/2, y-height/2, width, height);
+	}
+
+	public static float Width (this MonoBehaviour behaviour, float width)
+	{
+		return width*Screen.width;
+	}
+
+	public static float Height (this MonoBehaviour behaviour, float height)
+	{
+		return height*Screen.height;
+	}
+
 	public static void Animate(string gui, Vector2 end, float duration) {
 		GetGui(gui).SetAnimation(end, duration);
 	}

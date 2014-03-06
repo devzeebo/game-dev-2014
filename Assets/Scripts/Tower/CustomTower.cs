@@ -21,16 +21,26 @@ public class CustomTower : MonoBehaviour {
 
 	public GameObject Spawn (Vector3 location) {
 
-		GameObject baseObj = (GameObject)GameObject.Instantiate(towerBase, location, Quaternion.identity);
-		GameObject modObj = (GameObject)GameObject.Instantiate(towerModule, location, Quaternion.identity);
-		GameObject weapObj = (GameObject)GameObject.Instantiate(towerWeapon, location, Quaternion.identity);
+        if (towerBase != null)
+        {
+            GameObject baseObj = (GameObject)GameObject.Instantiate(towerBase, location, Quaternion.identity);
 
-		modObj.transform.parent = baseObj.transform;
-		weapObj.transform.parent = modObj.transform;
+            if (towerModule != null) {
+                GameObject modObj = (GameObject)GameObject.Instantiate(towerModule, location, Quaternion.identity);
+                modObj.transform.parent = baseObj.transform;
 
-		baseObj.GetComponent<TowerBase>().module = modObj.GetComponent<TowerModule>();
-		modObj.GetComponent<TowerModule>().weapon = weapObj.GetComponent<TowerWeapon>();
+                baseObj.GetComponent<TowerBase>().module = modObj.GetComponent<TowerModule>();
 
-		return baseObj;
+                if (towerWeapon != null) {
+                    GameObject weapObj = (GameObject)GameObject.Instantiate(towerWeapon, location, Quaternion.identity);
+                    weapObj.transform.parent = modObj.transform;
+                    
+                    modObj.GetComponent<TowerModule>().weapon = weapObj.GetComponent<TowerWeapon>();
+                }
+            }
+
+            return baseObj;
+        }
+        return null;
 	}
 }
