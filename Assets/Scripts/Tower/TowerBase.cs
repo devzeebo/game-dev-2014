@@ -5,7 +5,8 @@ public class TowerBase : MonoBehaviour {
 
 	public TowerModule module;
 
-	private GameObject enemy;
+	[HideInInspector]
+	public GameObject enemy;
 
 	public float attackSpeedMultiplier = 1f;
 
@@ -48,7 +49,7 @@ public class TowerBase : MonoBehaviour {
 		return 100f / (attackSpeedMultiplier * module.attackSpeed * module.weapon.attackSpeedMultiplier);
     }
 
-	void Attack() {
+	public virtual void Attack() {
 
 		attackCooldown = 100f / (attackSpeedMultiplier * module.attackSpeed * module.weapon.attackSpeedMultiplier);
 

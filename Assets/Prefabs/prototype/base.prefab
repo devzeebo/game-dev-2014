@@ -42,7 +42,7 @@ MonoBehaviour:
   module: {fileID: 0}
   attackSpeedMultiplier: 1
   attackDamageMultiplier: 1
-  attackCooldown: 10
+  attackCooldown: 100
   range: 5
 --- !u!212 &21200000
 SpriteRenderer:
