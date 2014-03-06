@@ -453,6 +453,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1645078651}
   - 212: {fileID: 1645078650}
+  - 114: {fileID: 1645078652}
   - 114: {fileID: 1645078649}
   m_Layer: 0
   m_Name: enemy
@@ -508,6 +509,19 @@ Transform:
   m_LocalScale: {x: .699999988, y: .699999988, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1645078652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: b382ec0720438c04d9775e348cfd2a28,
+    type: 2}
+  m_PrefabInternal: {fileID: 37697359}
+  m_GameObject: {fileID: 1645078648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fe49190f231bc49912ddbe5182aea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &1676336282
 GameObject:
   m_ObjectHideFlags: 0

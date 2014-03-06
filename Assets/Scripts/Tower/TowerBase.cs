@@ -42,11 +42,6 @@ public class TowerBase : MonoBehaviour {
 
 		attackCooldown = 100f / (attackSpeedMultiplier * module.attackSpeed * module.weapon.attackSpeedMultiplier);
 		GameObject bullet = (GameObject)GameObject.Instantiate(module.weapon.projectilePrototype, transform.position, Quaternion.identity);
-		float distance = Vector2.Distance(bullet.transform.position, enemy.transform.position);
 		bullet.LookAt2D(enemy);
-		distance = bullet.gameObject.Move(3f, distance);
-		if (distance > 0) {
-			bullet.gameObject.Move(3f, distance);
-		}
 	}
 }
