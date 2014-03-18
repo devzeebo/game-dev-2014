@@ -7,14 +7,6 @@ public class TowerButton : MonoBehaviour {
     public TowerController controller;
 
 	public Vector2 scrollPosition = Vector2.zero;
-
-	static private int screenwidth = 1365;
-	static private int screenheight = 595;
-	private Rect WholeScreen = new Rect(0, 0, screenwidth, screenheight);
-	private Rect LeftQuarter = new Rect (0,0,screenwidth/4, screenheight/4);
-	private Rect offscreen2 = new Rect (0,0,screenwidth/4,screenheight);
-	private Rect RightQuarter = new Rect(3*screenwidth/4, 0, screenwidth -3*screenwidth/4, screenheight);
-	private Rect offscreen = new Rect(screenwidth-30, 0, screenwidth, screenheight);
 	public List<GameObject> TowerComponents;
     public string Module;
 	private List<GameObject> spawnedObjects;
@@ -35,7 +27,7 @@ public class TowerButton : MonoBehaviour {
 
 		for(int i=0;i<TowerComponents.Count;i++)
 		{
-			Vector2 position = new Vector2(this.Width(.85f),this.Height(0.25f*(i+1)));
+			Vector2 position = new Vector2(this.Width(.875f),this.Height(0.25f*(i+1)));
 			spawnedObjects[i].transform.position = Utilities.ScreenToWorld(position);
 			if(GUI.Button(this.CenteredRect(position.x, position.y, this.Height(.2f), this.Height(.2f)),""))
 			{

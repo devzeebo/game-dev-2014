@@ -6,6 +6,10 @@ public class TowerSelectionMenu : MonoBehaviour {
 
 	public List<CustomTower> towers;
 
+    void displayTowers() {
+        // while not end of list, create tower object along bottom of screen
+
+    }
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad(gameObject);

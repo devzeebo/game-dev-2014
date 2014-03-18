@@ -184,6 +184,12 @@ MonoBehaviour:
   towers:
   - {fileID: 11400000, guid: 18abd10bc88577c4196172e9d98035d6, type: 2}
   - {fileID: 11400000, guid: 18abd10bc88577c4196172e9d98035d6, type: 2}
+  - {fileID: 11400000, guid: 18abd10bc88577c4196172e9d98035d6, type: 2}
+  - {fileID: 11400000, guid: 18abd10bc88577c4196172e9d98035d6, type: 2}
+  - {fileID: 11400000, guid: 18abd10bc88577c4196172e9d98035d6, type: 2}
+  - {fileID: 11400000, guid: 18abd10bc88577c4196172e9d98035d6, type: 2}
+  - {fileID: 11400000, guid: 18abd10bc88577c4196172e9d98035d6, type: 2}
+  - {fileID: 11400000, guid: 18abd10bc88577c4196172e9d98035d6, type: 2}
 --- !u!4 &1275933023
 Transform:
   m_ObjectHideFlags: 0

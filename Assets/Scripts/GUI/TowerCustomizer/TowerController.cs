@@ -5,26 +5,23 @@ public class TowerController : MonoBehaviour {
 	public GameObject TowerBase;
 	public GameObject TowerModule;
 	public GameObject TowerWeapon;
-	static private int screenwidth = 1365;
-	static private int screenheight = 595;
 	static private int buttonwidth = 30;
-	private Rect RightQuarter = new Rect(3*screenwidth/4, 0, screenwidth -3*screenwidth/4, screenheight);
-
+    static private float buttonheight;
     public CustomTower WorkingTower;
     public GameObject WorkingTowerSpawn;
 
-    public Vector3 WorldCenter;
+    public Vector3 TowerCenter;
 
     int WorkingSlot;
 
 	// Use this for initialization
 	void Start () {
-        WorldCenter = Utilities.ScreenToWorld(new Vector2(this.Width(.525f), this.Height(.5f)));
+        TowerCenter = Utilities.ScreenToWorld(new Vector2(this.Width(.5f), this.Height(.25f)));
 
         TowerBase.SetActive(true);
         TowerModule.SetActive(false);
         TowerWeapon.SetActive(false);
-
+        buttonheight = this.Height(.2f);
         SelectSlot(0);
 	}
 
@@ -44,7 +41,7 @@ public class TowerController : MonoBehaviour {
         if (WorkingTowerSpawn != null) {
             Destroy(WorkingTowerSpawn);
         }
-        WorkingTowerSpawn = WorkingTower.Spawn(WorldCenter);
+        WorkingTowerSpawn = WorkingTower.Spawn(TowerCenter);
         TowerSelectionMenu.Instance[WorkingSlot] = WorkingTower;
     }
 
@@ -52,7 +49,8 @@ public class TowerController : MonoBehaviour {
         WorkingSlot = slot;
         Destroy(WorkingTowerSpawn);
         WorkingTower = TowerSelectionMenu.Instance[slot];
-        WorkingTowerSpawn = WorkingTower.Spawn(WorldCenter);
+        WorkingTowerSpawn = WorkingTower.Spawn(TowerCenter);
+        WorkingTowerSpawn.transform.localScale = new Vector3(2f, 2f, 0f);
     }
 
 	void OnGUI(){
@@ -71,7 +69,7 @@ public class TowerController : MonoBehaviour {
 		}
         //*/
 		// Use Tower Button
-		if (GUI.Button(new Rect(screenwidth/2-50 , 3*screenheight/4-50, 100, 100),"Use Tower"))
+        if (GUI.Button(this.CenteredRect(this.Width(.5f), this.Height(.66f), buttonheight, buttonheight), "Use Tower"))
 			// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
 		{
 			Debug.Log("Clicked the button with an image");
@@ -80,7 +78,7 @@ public class TowerController : MonoBehaviour {
 			// use get component to get the prefab info for whichever prefab is selected
 		}
 		// Component Selection Window
-		if (GUI.Button(new Rect(3*screenwidth/4-buttonwidth , 2*screenheight/3, buttonwidth, screenheight/3), "b\na\ns\ne"))
+        if (GUI.Button(new Rect(this.Width(.75f), this.Height(.66f), buttonwidth, this.Height(.33f)), "b\na\ns\ne"))
 		{
 			Debug.Log("Clicked the button with an image");
 			//btnTexture3=btnTexture;
@@ -88,7 +86,7 @@ public class TowerController : MonoBehaviour {
             TowerModule.SetActive (false);
             TowerWeapon.SetActive (false);
 		}
-		if (GUI.Button(new Rect(3*screenwidth/4-buttonwidth , screenheight/3, buttonwidth, screenheight/3), "m\no\nd\nu\nl\ne"))
+        if (GUI.Button(new Rect(this.Width(.75f), this.Height(.33f), buttonwidth, this.Height(.33f)), "m\no\nd\nu\nl\ne"))
 		{
 			Debug.Log("Clicked the button with an image");
 			//btnTexture3=btnTexture;
@@ -96,7 +94,7 @@ public class TowerController : MonoBehaviour {
             TowerModule.SetActive(true);
             TowerWeapon.SetActive(false);
 		}
-		if (GUI.Button(new Rect(3*screenwidth/4-buttonwidth , 0, buttonwidth, screenheight/3), "w\ne\na\np\no\nn"))
+        if (GUI.Button(new Rect(this.Width(.75f), this.Height(.0f), buttonwidth, this.Height(.33f)), "w\ne\na\np\no\nn"))
 		{
 			Debug.Log("Clicked the button with an image");
             TowerBase.SetActive(false);
