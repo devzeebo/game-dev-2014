@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class TowerBase : MonoBehaviour {
 
 	public TowerModule module;
 
 	[HideInInspector]
-	public GameObject enemy;
+	public List<GameObject> targets;
 
 	public float attackSpeedMultiplier = 1f;
 
@@ -16,39 +17,64 @@ public class TowerBase : MonoBehaviour {
 
 	public float range = 5f;
 
+	private CircleCollider2D Range;
+
+	public bool IsOnCooldown {
+		get {
+			return attackCooldown > 0;
+		}
+	}
+
+	protected GameObject ClosestTarget {
+		get {
+			return targets.OrderBy(go => 
+				Vector2.Distance(go.transform.position, transform.position)
+			).First();
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
+
+		GameObject other = new GameObject();
+		other.AddComponent<CircleCollider2D>();
+		other.transform.parent = transform;
+		Range = other.GetComponent<CircleCollider2D>();
+		Range.isTrigger = true;
+
+		UpdateRange(range);
+	}
+
+	public void UpdateRange(float range) {
+		Range.radius = range;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if(enemy != null) {
-			module.gameObject.LookAt2D(enemy);
-			if (Vector3.Distance(transform.position, enemy.transform.position) < range){
-				Attack();
-			}
-			else {
-				enemy = null;
-			}
-		}
-		
-		if (enemy == null)
-		{
-			GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
-			if (enemies.Length > 0) {
-				GameObject closest = null;
-				float distance = float.MaxValue;
-				for (int x = 0; x < enemies.Length; x++) {
-					float dist = Vector3.Distance(transform.position, enemies[x].transform.position);
-					if (dist < distance) {
-						distance = dist;
-						closest = enemies[x];
-					}
+		attackCooldown -= Time.deltaTime;
+
+		if (!IsOnCooldown && targets.Count > 0) {
+			for (int i = 0; i < targets.Count; i++) {
+				if (AttackCheck(targets[i])) {
+					Attack(targets[i]);
 				}
-				enemy = closest;
-				module.gameObject.LookAt2D(enemy);
 			}
+
+			attackCooldown = GetAttackSpeed();
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col) {
+		Debug.Log(col.tag);
+		if (col.gameObject.tag == "enemy") {
+			targets.Add(col.gameObject);
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D col) {
+		if (targets.Contains(col.gameObject)) {
+			targets.Remove(col.gameObject);
 		}
 	}
 
@@ -60,23 +86,26 @@ public class TowerBase : MonoBehaviour {
 		return 100f / (attackSpeedMultiplier * module.attackSpeed * module.weapon.attackSpeedMultiplier);
     }
 
-	public virtual GameObject SpawnProjectile() {
+	public GameObject SpawnProjectile() {
 		GameObject bullet = (GameObject)GameObject.Instantiate(module.weapon.projectilePrototype, transform.position, Quaternion.identity);
 		bullet.GetComponent<Projectile>().SetDamage(GetAttackDamage());
 		return bullet;
 	}
 
-	public void Attack() {
+	public virtual void Attack(GameObject enemy) {
+		
+		GameObject bullet = SpawnProjectile();
+		Projectile projectile = bullet.GetComponent<Projectile>();
+		projectile.enemy = enemy;
+		ModifyBullet(projectile);
+	}
 
-		attackCooldown -= Time.deltaTime;
+	public virtual bool AttackCheck(GameObject other) {
+		
+		return Vector2.Distance(transform.position, other.transform.position) < range;
+	}
 
-		Debug.Log(attackCooldown);
-		if (attackCooldown < 0) {
-			
-			attackCooldown = GetAttackSpeed();
-
-			GameObject bullet = SpawnProjectile();
-			bullet.LookAt2D(enemy);
-		}
+	public virtual void ModifyBullet(Projectile bullet) {
+		bullet.gameObject.LookAt2D(bullet.enemy);
 	}
 }
