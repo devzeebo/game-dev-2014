@@ -11,7 +11,18 @@ public class Projectile : MonoBehaviour {
 
 	public float maxTime = 1000;
 
-	protected long spawnTime;
+	public long spawnTime;
+
+	public float Age {
+		get {
+			return (Utilities.GetCurrentTimeMillis() - spawnTime) / maxTime;
+		}
+	}
+
+	public bool DestroyOnHit = true;
+
+	public delegate void UpdateFunction(float deltaTime);
+	public UpdateFunction updateFunction;
 
 	// Use this for initialization
 	void Start () {
@@ -26,8 +37,9 @@ public class Projectile : MonoBehaviour {
 	void Update () {
 
 		Update(Time.deltaTime);
+		updateFunction(Time.deltaTime);
 
-		if (CheckDestroy()) {
+		if (DestroyAfterTime()) {
 			Destroy(gameObject);
 		}
 		else {
@@ -41,17 +53,21 @@ public class Projectile : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)   {
 		if (other.tag == "enemy") {
-			enemy.gameObject.GetComponent<Health>().Damage(Damage);
+			other.gameObject.GetComponent<Health>().Damage(Damage);
 			HitEnemy(other.gameObject);
+
+			if (DestroyOnHit) {
+				Destroy(gameObject);
+			}
 		}
 	}
 
 	public virtual void HitEnemy(GameObject enemy) {
-		Destroy(gameObject);
+		
 	}
 
-	public virtual bool CheckDestroy() {
-		return Utilities.GetCurrentTimeMillis() - spawnTime > maxTime;
+	protected bool DestroyAfterTime() {
+		return Age > 1;
 	}
 }
 
