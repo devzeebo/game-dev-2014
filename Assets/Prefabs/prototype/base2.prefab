@@ -42,7 +42,7 @@ MonoBehaviour:
   module: {fileID: 0}
   targets: []
   attackSpeedMultiplier: .300000012
-  attackDamageMultiplier: 30
+  attackDamageMultiplier: 1
   attackCooldown: 0
   range: 3
   MaxTargets: 1
