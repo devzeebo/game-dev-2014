@@ -921,7 +921,7 @@ MonoBehaviour:
   spawnSpeed: 1
   cooldown: 0
   path: {fileID: 1676336284}
-  EnemyPrefab: {fileID: 100000, guid: b382ec0720438c04d9775e348cfd2a28, type: 2}
+  EnemyPrefab: {fileID: 100002, guid: b382ec0720438c04d9775e348cfd2a28, type: 2}
 --- !u!1 &1694898207
 GameObject:
   m_ObjectHideFlags: 0

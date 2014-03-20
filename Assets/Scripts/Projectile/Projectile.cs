@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour {
 
 	public float maxTime = 1000;
 
-	protected float spawnTime;
+	protected long spawnTime;
 
 	// Use this for initialization
 	void Start () {
@@ -33,17 +33,19 @@ public class Projectile : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other)   {
+	void OnTriggerEnter(Collider other)   {
 		if (other.tag == "enemy") {
+			enemy.gameObject.GetComponent<Health>().Damage(Damage);
 			HitEnemy(other.gameObject);
 		}
 	}
 
 	public virtual void HitEnemy(GameObject enemy) {
-		enemy.gameObject.GetComponent<Health>().Damage(Damage);
+		Destroy(gameObject);
 	}
 
 	public virtual bool CheckDestroy() {
+		Debug.Log(Utilities.GetCurrentTimeMillis() + " " + spawnTime);
 		return Utilities.GetCurrentTimeMillis() - spawnTime > maxTime;
 	}
 }

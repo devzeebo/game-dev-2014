@@ -17,7 +17,7 @@ public class TowerBase : MonoBehaviour {
 
 	public float range = 5f;
 
-	private CircleCollider2D Range;
+	private SphereCollider Range;
 
 	public bool IsOnCooldown {
 		get {
@@ -36,11 +36,14 @@ public class TowerBase : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		GameObject other = new GameObject();
-		other.AddComponent<CircleCollider2D>();
-		other.transform.parent = transform;
-		Range = other.GetComponent<CircleCollider2D>();
+		Range = gameObject.AddComponent<SphereCollider>();
 		Range.isTrigger = true;
+
+		//Rigidbody rigid = gameObject.AddComponent<Rigidbody>();
+		//rigid.mass = 0;
+		//rigid.drag = 0;
+		//rigid.angularDrag = 0;
+		//rigid.isKinematic = true;
 
 		UpdateRange(range);
 	}
@@ -56,8 +59,14 @@ public class TowerBase : MonoBehaviour {
 
 		if (!IsOnCooldown && targets.Count > 0) {
 			for (int i = 0; i < targets.Count; i++) {
-				if (AttackCheck(targets[i])) {
-					Attack(targets[i]);
+				if (targets[i] != null) {
+					if (AttackCheck(targets[i])) {
+						Attack(targets[i]);
+					}
+				}
+				else {
+					targets.RemoveAt(i);
+					i--;
 				}
 			}
 
@@ -65,14 +74,13 @@ public class TowerBase : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D col) {
-		Debug.Log(col.tag);
+	void OnTriggerEnter(Collider col) {
 		if (col.gameObject.tag == "enemy") {
 			targets.Add(col.gameObject);
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D col) {
+	void OnTriggerExit(Collider col) {
 		if (targets.Contains(col.gameObject)) {
 			targets.Remove(col.gameObject);
 		}
