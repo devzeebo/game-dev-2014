@@ -18,18 +18,23 @@ public class TowerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         TowerCenter = Utilities.ScreenToWorld(new Vector2(this.Width(.5f), this.Height(.25f)));
-        SavedTowers = new List<GameObject>();
+        SavedTowers = new List<GameObject>(8);
         TowerBase.SetActive(true);
         TowerModule.SetActive(false);
         TowerWeapon.SetActive(false);
         buttonheight = this.Height(.2f);
         for (int i = 0; i < 8; i++) {
+            SavedTowers.Add(new GameObject ());
             RenderSlotButton(i);
         }
         SelectSlot(0);
 	}
     void RenderSlotButton(int index) {
-        TowerSelectionMenu.Instance[index].Spawn(Utilities.ScreenToWorld(new Vector2(this.Width(.3f)+this.Height(.125f)*index, this.Height(.9f))));
+        if (SavedTowers[index] != null) {
+            Destroy(SavedTowers[index]);
+        }
+        SavedTowers[index] = TowerSelectionMenu.Instance[index].Spawn(Utilities.ScreenToWorld(new Vector2(this.Width(.3f)+this.Height(.125f)*index, this.Height(.9f))));
+
     }
     public void SetComponent(string module, GameObject obj) {
         switch(module)
@@ -49,6 +54,7 @@ public class TowerController : MonoBehaviour {
         }
         WorkingTowerSpawn = WorkingTower.Spawn(TowerCenter);
         TowerSelectionMenu.Instance[WorkingSlot] = WorkingTower;
+        WorkingTowerSpawn.transform.localScale = new Vector3(2f, 2f, 0f);
     }
 
     void SelectSlot(int slot) {
@@ -61,18 +67,22 @@ public class TowerController : MonoBehaviour {
 	void OnGUI(){
         
 		//Edit Tower Slot Button Loop
-
-        /*
-		if (GUI.Button(this.CenteredRect(this.Width(.5f), this.Height(.66f), buttonheight, buttonheight),"Slot 0"))
+        for (int i = 0; i < 8; i++) {
+            
+            if (GUI.Button(this.CenteredRect(this.Width(.3f) + this.Height(.125f) * i, this.Height(.9f), this.Height(.1f)+1, this.Height(.1f)+1), ""+i)) {
+                SelectSlot(i);
+                RenderSlotButton(i);
+                Debug.Log(i);
+            }
+        }
+        
+        // Save Tower Button
+		if (GUI.Button(this.CenteredRect(this.Width(.5f), this.Height(.33f), buttonheight, buttonheight),"Save Tower"))
 		{
             SelectSlot(0);
-            Vector3 Button1 = new Vector3(screenwidth / 3 - 50, screenheight / 2 - 50, 0);
-            TowerSelectionMenu.Instance[0].Spawn(Button1);
+            Vector3 Button1 = new Vector3(this.Width(.33f), this.Height(.5f), 0);
+            //TowerSelectionMenu.Instance[0].Spawn(Button1);
             TowerSelectionMenu.Instance[0] = WorkingTower;
-		}
-		if (GUI.Button(new Rect(2*screenwidth/3-50 , screenheight/2-50, 100, 100),"Slot 2"))
-		{
-            SelectSlot(1);
 		}
         //*/
         // Use Tower Button
