@@ -23,10 +23,13 @@ public class TowerController : MonoBehaviour {
         TowerModule.SetActive(false);
         TowerWeapon.SetActive(false);
         buttonheight = this.Height(.2f);
+        for (int i = 0; i < 8; i++) {
+            RenderSlotButton(i);
+        }
         SelectSlot(0);
 	}
     void RenderSlotButton(int index) {
-        TowerSelectionMenu.Instance[index].Spawn(Utilities.ScreenToWorld(new Vector2(this.Width(.25f)+this.Height(.15f)*index, this.Height(.9f))));
+        TowerSelectionMenu.Instance[index].Spawn(Utilities.ScreenToWorld(new Vector2(this.Width(.3f)+this.Height(.125f)*index, this.Height(.9f))));
     }
     public void SetComponent(string module, GameObject obj) {
         switch(module)
@@ -58,9 +61,7 @@ public class TowerController : MonoBehaviour {
 	void OnGUI(){
         
 		//Edit Tower Slot Button Loop
-        for (int i = 0; i < 8; i++) {
-            RenderSlotButton(i);
-        }
+
         /*
 		if (GUI.Button(this.CenteredRect(this.Width(.5f), this.Height(.66f), buttonheight, buttonheight),"Slot 0"))
 		{
