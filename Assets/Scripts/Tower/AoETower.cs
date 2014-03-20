@@ -2,21 +2,15 @@
 using System.Collections;
 
 public class AoETower : TowerBase {
-	
-	//public override GameObject SpawnProjectile() {
 
-	//	GameObject bullet = base.SpawnProjectile();
+	void OnStart() {
 
-	//	bullet.transform.localScale += new Vector3(3f,3f,0);
-	//	bullet.GetComponent<Projectile>().speed = 0;
+	}
 
-	//	StartCoroutine(KillBullet(bullet.GetComponent<Projectile>()));
+	public override void ModifyBullet(Projectile bullet) {
+		base.ModifyBullet(bullet);
 
-	//	return bullet;
-	//}
-
-	//public IEnumerator KillBullet(Projectile go) {
-	//	yield return new WaitForSeconds(0.01f);
-	//	go.DestroyNextUpdate();
-	//}
+		bullet.speed = 0;
+		bullet.transform.localScale = new Vector3(range, range, 0);
+	}
 }

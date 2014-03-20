@@ -25,12 +25,18 @@ public class Projectile : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		Update(Time.deltaTime);
+
 		if (CheckDestroy()) {
 			Destroy(gameObject);
 		}
 		else {
 			gameObject.Move(speed);
 		}
+	}
+
+	protected virtual void Update(float deltaTime) {
+
 	}
 
 	void OnTriggerEnter(Collider other)   {
@@ -45,7 +51,6 @@ public class Projectile : MonoBehaviour {
 	}
 
 	public virtual bool CheckDestroy() {
-		Debug.Log(Utilities.GetCurrentTimeMillis() + " " + spawnTime);
 		return Utilities.GetCurrentTimeMillis() - spawnTime > maxTime;
 	}
 }

@@ -19,17 +19,11 @@ public class TowerBase : MonoBehaviour {
 
 	private SphereCollider Range;
 
+	public int MaxTargets = 1;
+
 	public bool IsOnCooldown {
 		get {
 			return attackCooldown > 0;
-		}
-	}
-
-	protected GameObject ClosestTarget {
-		get {
-			return targets.OrderBy(go => 
-				Vector2.Distance(go.transform.position, transform.position)
-			).First();
 		}
 	}
 
@@ -51,17 +45,34 @@ public class TowerBase : MonoBehaviour {
 	public void UpdateRange(float range) {
 		Range.radius = range;
 	}
-	
+
+	protected void SortTargets() {
+		targets.Sort( (go1, go2) =>
+			(int)Mathf.Sign(Vector2.Distance(go1.transform.position, transform.position) - Vector2.Distance(go2.transform.position, transform.position))
+		);
+	}
+
 	// Update is called once per frame
 	void Update () {
 
 		attackCooldown -= Time.deltaTime;
 
+		targets.RemoveAll( go => go == null );
+		SortTargets();
+
+		int targetsRemaining = MaxTargets;
+
 		if (!IsOnCooldown && targets.Count > 0) {
 			for (int i = 0; i < targets.Count; i++) {
+				
+				if (targetsRemaining == 0) {
+					break;
+				}
+
 				if (targets[i] != null) {
 					if (AttackCheck(targets[i])) {
 						Attack(targets[i]);
+						targetsRemaining--;
 					}
 				}
 				else {
@@ -109,7 +120,6 @@ public class TowerBase : MonoBehaviour {
 	}
 
 	public virtual bool AttackCheck(GameObject other) {
-		
 		return Vector2.Distance(transform.position, other.transform.position) < range;
 	}
 
