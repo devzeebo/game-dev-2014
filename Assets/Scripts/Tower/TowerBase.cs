@@ -28,16 +28,10 @@ public class TowerBase : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
+	protected void Start () {
 
 		Range = gameObject.AddComponent<SphereCollider>();
 		Range.isTrigger = true;
-
-		//Rigidbody rigid = gameObject.AddComponent<Rigidbody>();
-		//rigid.mass = 0;
-		//rigid.drag = 0;
-		//rigid.angularDrag = 0;
-		//rigid.isKinematic = true;
 
 		UpdateRange(range);
 	}
@@ -58,13 +52,18 @@ public class TowerBase : MonoBehaviour {
 		attackCooldown -= Time.deltaTime;
 
 		targets.RemoveAll( go => go == null );
+
+		PerformUpdate();
+	}
+
+	protected virtual void PerformUpdate() {
 		SortTargets();
 
 		int targetsRemaining = MaxTargets;
 
 		if (!IsOnCooldown && targets.Count > 0) {
 			for (int i = 0; i < targets.Count; i++) {
-				
+
 				if (targetsRemaining == 0) {
 					break;
 				}
@@ -88,13 +87,23 @@ public class TowerBase : MonoBehaviour {
 	void OnTriggerEnter(Collider col) {
 		if (col.gameObject.tag == "enemy") {
 			targets.Add(col.gameObject);
+			OnEnemyEnter(col.gameObject);
 		}
+	}
+
+	protected virtual void OnEnemyEnter(GameObject obj) {
+
 	}
 
 	void OnTriggerExit(Collider col) {
 		if (targets.Contains(col.gameObject)) {
 			targets.Remove(col.gameObject);
+			OnEnemyExit(col.gameObject);
 		}
+	}
+
+	protected virtual void OnEnemyExit(GameObject obj) {
+
 	}
 
     float GetAttackDamage() {
