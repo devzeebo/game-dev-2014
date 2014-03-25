@@ -37,7 +37,11 @@ public class Projectile : MonoBehaviour {
 	void Update () {
 
 		Update(Time.deltaTime);
-		updateFunction(Time.deltaTime);
+
+		if (updateFunction != null)
+		{
+			updateFunction(Time.deltaTime);
+		}
 
 		if (DestroyAfterTime()) {
 			Destroy(gameObject);
