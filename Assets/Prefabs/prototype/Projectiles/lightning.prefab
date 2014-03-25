@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c35ba9a2ff846fa82528de54468dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 100002, guid: b382ec0720438c04d9775e348cfd2a28, type: 2}
+  enemy: {fileID: 0}
   speed: 10
   maxTime: 1000
   DestroyOnHit: 1
