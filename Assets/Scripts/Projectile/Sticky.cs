@@ -15,6 +15,6 @@ public class Sticky : Projectile {
 
 	public override void HitEnemy(GameObject enemy)
 	{
-		enemy.GetComponent<speed> = enemy.GetComponent<speed> * .5;
+
 	}
 }
