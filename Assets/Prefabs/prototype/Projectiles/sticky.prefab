@@ -9,8 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 114: {fileID: 11400000}
   - 135: {fileID: 13500000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: sticky
   m_TagString: Untagged
@@ -37,13 +37,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 036794dfc318e45bdb5cc091e4c75142, type: 3}
+  m_Script: {fileID: 11500000, guid: 563c900e8e43a47eea585e206c299204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  speed: 3
+  speed: 10
   maxTime: 1000
   DestroyOnHit: 1
+  initialSpeed: 0
+  effectTime: 3
+  speedModifier: .5
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
