@@ -163,8 +163,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1275933023}
   - 114: {fileID: 1275933022}
+  - 114: {fileID: 1275933024}
   m_Layer: 0
-  m_Name: TowerSelection
+  m_Name: GlobalScripts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,6 +202,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1275933024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1275933021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343e3646bef951a4086904eeb8044f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TotalJunk: 0
 --- !u!1 &1338493624
 GameObject:
   m_ObjectHideFlags: 0
