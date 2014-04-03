@@ -24,9 +24,15 @@ public class Projectile : MonoBehaviour {
 	public delegate void UpdateFunction(float deltaTime);
 	public UpdateFunction updateFunction;
 
+	public string[] experienceComponents;
+
 	// Use this for initialization
 	void Start () {
 		spawnTime = Utilities.GetCurrentTimeMillis();
+	}
+
+	public void SetExperienceComponents(params string[] comps) {
+		experienceComponents = comps;
 	}
 
 	public void SetDamage(float damage) {
@@ -57,7 +63,7 @@ public class Projectile : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)   {
 		if (other.tag == "enemy") {
-			other.gameObject.GetComponent<Health>().Damage(Damage);
+			other.gameObject.GetComponent<Health>().Damage(Damage, experienceComponents);
 			HitEnemy(other.gameObject);
 
 			if (DestroyOnHit) {

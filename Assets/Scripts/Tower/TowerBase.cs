@@ -125,6 +125,7 @@ public class TowerBase : MonoBehaviour {
 		GameObject bullet = SpawnProjectile();
 		Projectile projectile = bullet.GetComponent<Projectile>();
 		projectile.enemy = enemy;
+		projectile.SetExperienceComponents(gameObject.name, module.gameObject.name, module.weapon.gameObject.name);
 		ModifyBullet(projectile);
 	}
 

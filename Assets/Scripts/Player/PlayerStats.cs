@@ -10,6 +10,9 @@ public class PlayerStats : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		instance = this;
+
 		TowerSpentExperience = new Dictionary<string, float>();
 		TowerTotalExperience = new Dictionary<string, float>();
 	}
@@ -24,7 +27,10 @@ public class PlayerStats : MonoBehaviour {
 		}
 	}
 
-	void AddExperience(string component, float amount) {
+	public void AddExperience(string component, float amount) {
+		if (!TowerTotalExperience.ContainsKey(component)) {
+			TowerTotalExperience[component] = 0;
+		}
 		TowerTotalExperience[component] += amount;
 	}
 }

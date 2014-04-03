@@ -24,16 +24,19 @@ public class CustomTower : MonoBehaviour {
         if (towerBase != null)
         {
             GameObject baseObj = (GameObject)GameObject.Instantiate(towerBase, location, Quaternion.identity);
+			baseObj.name = towerBase.name;
 
             if (towerModule != null) {
                 GameObject modObj = (GameObject)GameObject.Instantiate(towerModule, location, Quaternion.identity);
                 modObj.transform.parent = baseObj.transform;
+				modObj.name = towerModule.name;
 
                 baseObj.GetComponent<TowerBase>().module = modObj.GetComponent<TowerModule>();
 
                 if (towerWeapon != null) {
                     GameObject weapObj = (GameObject)GameObject.Instantiate(towerWeapon, location, Quaternion.identity);
                     weapObj.transform.parent = modObj.transform;
+					weapObj.name = towerWeapon.name;
                     
                     modObj.GetComponent<TowerModule>().weapon = weapObj.GetComponent<TowerWeapon>();
                 }

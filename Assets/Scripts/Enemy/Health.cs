@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class Health : MonoBehaviour {
 
@@ -21,7 +21,13 @@ public class Health : MonoBehaviour {
 		HealthBar.transform.localScale = new Vector3(health/ maxHealth, 1f);
 	}
 
-	public float Damage(float damage) {
+	public float Damage(float damage, string[] experienceComponents) {
+
+		float experience = Mathf.Min(damage / maxHealth, 1) * 10;
+		foreach (string s in experienceComponents) {
+			PlayerStats.Instance.AddExperience(s, experience);
+		}
+
 		health -= damage;
 		if (health <= 0) {
 			Destroy(gameObject);
