@@ -3,39 +3,46 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class TowerController : MonoBehaviour {
+
 	public GameObject TowerBase;
 	public GameObject TowerModule;
 	public GameObject TowerWeapon;
-	static private int buttonwidth = 30;
-    static private float buttonheight;
+	
+	private static int buttonwidth = 30;
+    private static float buttonheight;
     public CustomTower WorkingTower;
     public GameObject WorkingTowerSpawn;
-    public List<GameObject> SavedTowers;
     public Vector3 TowerCenter;
 
     int WorkingSlot;
 
+	public List<CustomTower> CustomTowers {
+		get {
+			return TowerSelectionMenu.Instance.towers;
+		}
+	}
+
+	public List<GameObject> SavedTowers {
+		get {
+			return TowerSelectionMenu.Instance.towerInstances;
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
         TowerCenter = Utilities.ScreenToWorld(new Vector2(this.Width(.5f), this.Height(.25f)));
-        SavedTowers = new List<GameObject>(8);
         TowerBase.SetActive(true);
         TowerModule.SetActive(false);
         TowerWeapon.SetActive(false);
+
         buttonheight = this.Height(.2f);
         for (int i = 0; i < 8; i++) {
-            SavedTowers.Add(new GameObject ());
-            RenderSlotButton(i);
+			SavedTowers[i].transform.position = Utilities.ScreenToWorld(new Vector2(this.Width(.3f) + this.Height(.125f) * i, this.Height(.9f)));
+			SavedTowers[i].SetActive(true);
         }
         SelectSlot(0);
 	}
-    void RenderSlotButton(int index) {
-        if (SavedTowers[index] != null) {
-            Destroy(SavedTowers[index]);
-        }
-        SavedTowers[index] = TowerSelectionMenu.Instance[index].Spawn(Utilities.ScreenToWorld(new Vector2(this.Width(.3f)+this.Height(.125f)*index, this.Height(.9f))));
 
-    }
     public void SetComponent(string module, GameObject obj) {
         switch(module)
         {
@@ -49,44 +56,34 @@ public class TowerController : MonoBehaviour {
                 WorkingTower.towerWeapon = obj;
                 break;
         }
-        if (WorkingTowerSpawn != null) {
-            Destroy(WorkingTowerSpawn);
-        }
-        WorkingTowerSpawn = WorkingTower.Spawn(TowerCenter);
-        TowerSelectionMenu.Instance[WorkingSlot] = WorkingTower;
-        WorkingTowerSpawn.transform.localScale = new Vector3(2f, 2f, 0f);
+		CustomTowers[WorkingSlot] = WorkingTower;
+		TowerSelectionMenu.Instance.RefreshTower(WorkingSlot);
+		SelectSlot(WorkingSlot);
     }
 
     void SelectSlot(int slot) {
+		if (WorkingTowerSpawn != null) {
+			Destroy(WorkingTowerSpawn);
+		}
+		Destroy(WorkingTowerSpawn);
+
         WorkingSlot = slot;
-        Destroy(WorkingTowerSpawn);
-        WorkingTower = TowerSelectionMenu.Instance[slot];
+		WorkingTower = CustomTowers[slot];
         WorkingTowerSpawn = WorkingTower.Spawn(TowerCenter);
         WorkingTowerSpawn.transform.localScale = new Vector3(2f, 2f, 0f);
     }
-	void OnGUI(){
+	void OnGUI() {
         
 		//Edit Tower Slot Button Loop
         for (int i = 0; i < 8; i++) {
             
             if (GUI.Button(this.CenteredRect(this.Width(.3f) + this.Height(.125f) * i, this.Height(.9f), this.Height(.1f)+1, this.Height(.1f)+1), ""+i)) {
                 SelectSlot(i);
-                RenderSlotButton(i);
-                Debug.Log(i);
             }
         }
-        
-        // Save Tower Button
-		if (GUI.Button(this.CenteredRect(this.Width(.5f), this.Height(.33f), buttonheight, buttonheight),"Save Tower"))
-		{
-            SelectSlot(0);
-            Vector3 Button1 = new Vector3(this.Width(.33f), this.Height(.5f), 0);
-            //TowerSelectionMenu.Instance[0].Spawn(Button1);
-            TowerSelectionMenu.Instance[0] = WorkingTower;
-		}
-        //*/
+
         // Use Tower Button
-        if (GUI.Button(this.CenteredRect(this.Width(.5f), this.Height(.66f), buttonheight, buttonheight), "Use Tower"))
+        if (GUI.Button(this.CenteredRect(this.Width(.5f), this.Height(.66f), buttonheight, buttonheight), "Play Game"))
 			// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
 		{
 			Debug.Log("Clicked the button with an image");

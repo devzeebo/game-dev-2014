@@ -41,7 +41,7 @@ public class Grid : MonoBehaviour {
 		}
 		else if(towers[(int)gridPos.x,(int)gridPos.y] == null)
 		{
-			spawnedObject = tower.GetComponent<CustomTower>().Spawn(GridToWorldPosition(gridPos));
+			spawnedObject = tower.GetComponent<CustomTowerBehaviour>().Spawn(GridToWorldPosition(gridPos));
 			towers[(int)gridPos.x,(int)gridPos.y] = spawnedObject;
 		}
 		else
