@@ -23,7 +23,7 @@ public class DroneTower : TowerBase {
 		}
 	}
 
-	void Start() {
+	public override void Start() {
 		base.Start();
 	}
 

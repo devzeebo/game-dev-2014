@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public static class GUIUtilities {
 
-	private static Dictionary<string, GuiPosition> animations;
+	private static Dictionary<string, GuiPosition> animations = new Dictionary<string, GuiPosition>();
 
 	public static Rect CenteredRect(this MonoBehaviour behaviour, float x, float y, float width, float height)
 	{

@@ -15,7 +15,7 @@ public class Wave : MonoBehaviour {
 	public delegate void Finished();
 	
 	// Use this for initialization
-	public void Start () {
+	public virtual void Start () {
 		waves = new List<Wave>();
 
 		for (int x = 0; x < transform.childCount; x++) {

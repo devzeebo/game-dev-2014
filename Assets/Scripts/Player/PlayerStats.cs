@@ -25,5 +25,6 @@ public class PlayerStats : MonoBehaviour {
 	}
 
 	void AddExperience(string component, float amount) {
+		TowerTotalExperience[component] += amount;
 	}
 }

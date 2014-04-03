@@ -8,7 +8,7 @@ public class WaveManager : Wave {
 	public GameObject EnemyPrefab;
 
 	// Use this for initialization
-	public void Start () {
+	public override void Start () {
 		base.Start();
 	}
 	

@@ -28,7 +28,7 @@ public class TowerBase : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	protected void Start () {
+	public virtual void Start () {
 
 		Range = gameObject.AddComponent<SphereCollider>();
 		Range.isTrigger = true;
