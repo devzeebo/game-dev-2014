@@ -523,7 +523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf424a1ba27d1de4184509580ac731ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  temp: {fileID: 100000, guid: 18abd10bc88577c4196172e9d98035d6, type: 2}
+  DeadZone: 100
+  CircleRadius: 1.5
 --- !u!114 &906515112
 MonoBehaviour:
   m_ObjectHideFlags: 0

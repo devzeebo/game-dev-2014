@@ -11,6 +11,7 @@ public class TouchController : MonoBehaviour {
 	private Vector3 touchPosition;
 	private Vector3 worldTouchPosition;
 
+	public float DeadZone = 100f;
 	public float CircleRadius = 2f;
 
 	// Use this for initialization
@@ -30,8 +31,12 @@ public class TouchController : MonoBehaviour {
 				ShowTowers();
 			}
 			if (e.phase == TouchPhase.Ended) {
-				bool placed = grid.PlaceTower(TowerSelectionMenu.Instance.towers[GetIndex(e.position)], touchPosition);
+				Debug.Log(Vector3.Distance(e.position, touchPosition));
 
+				if (Vector3.Distance(e.position, touchPosition) > DeadZone) {
+					bool placed = grid.PlaceTower(TowerSelectionMenu.Instance.towers[GetIndex(e.position)], touchPosition);
+				}
+				
 				HideTowers();
 			}
 		}
