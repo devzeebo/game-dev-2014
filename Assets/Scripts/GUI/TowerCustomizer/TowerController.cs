@@ -77,7 +77,7 @@ public class TowerController : MonoBehaviour {
 		//Edit Tower Slot Button Loop
         for (int i = 0; i < 8; i++) {
             
-            if (GUI.Button(this.CenteredRect(this.Width(.3f) + this.Height(.125f) * i, this.Height(.9f), this.Height(.1f)+1, this.Height(.1f)+1), ""+i)) {
+            if (GUI.Button(this.CenteredRect(this.Width(.3f) + this.Height(.125f) * i, this.Height(.9f), this.Height(.1f) + 1, this.Height(.1f) + 1), "" + (i + 1))) {
                 SelectSlot(i);
             }
         }

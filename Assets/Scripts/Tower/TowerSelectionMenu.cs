@@ -51,8 +51,6 @@ public class TowerSelectionMenu : MonoBehaviour {
 			}
 			towerInstances[index] = obj;
 			towers[index] = tower.customTower;
-
-			towerInstances[index].SetActive(false);
 		}
 	}
 
@@ -97,10 +95,9 @@ public class TowerSelectionMenu : MonoBehaviour {
 				towers[i].towerWeapon = defaultWeapon;
 
 				towerInstances.Add(new GameObject());
-			}
 
-			for (int i = 0; i < 8; i++) {
 				RefreshTower(i, Vector3.zero);
+				towerInstances[i].SetActive(false);
 			}
 		//}
 	}

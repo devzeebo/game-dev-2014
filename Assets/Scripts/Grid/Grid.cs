@@ -31,7 +31,7 @@ public class Grid : MonoBehaviour {
         return towers[x, y];
     }
 
-	public bool PlaceTower(GameObject tower, Vector3 position) {
+	public bool PlaceTower(CustomTower tower, Vector3 position) {
 		GameObject spawnedObject = null;
 		Vector2 gridPos = ScreenToGridPosition(position);
 		//Debug.Log(gridPos);
@@ -41,7 +41,7 @@ public class Grid : MonoBehaviour {
 		}
 		else if(towers[(int)gridPos.x,(int)gridPos.y] == null)
 		{
-			spawnedObject = tower.GetComponent<CustomTowerBehaviour>().Spawn(GridToWorldPosition(gridPos));
+			spawnedObject = tower.Spawn(GridToWorldPosition(gridPos));
 			towers[(int)gridPos.x,(int)gridPos.y] = spawnedObject;
 		}
 		else
