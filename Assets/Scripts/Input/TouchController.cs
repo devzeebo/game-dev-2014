@@ -31,9 +31,8 @@ public class TouchController : MonoBehaviour {
 				ShowTowers();
 			}
 			if (e.phase == TouchPhase.Ended) {
-				Debug.Log(Vector3.Distance(e.position, touchPosition));
-
 				if (Vector3.Distance(e.position, touchPosition) > DeadZone) {
+
 					bool placed = grid.PlaceTower(TowerSelectionMenu.Instance.towers[GetIndex(e.position)], touchPosition);
 				}
 				
@@ -60,11 +59,11 @@ public class TouchController : MonoBehaviour {
 		float rawAngle = Mathf.Atan2(release.y - touchPosition.y, release.x - touchPosition.x) - Mathf.PI / 2 - Mathf.PI / 8;
 		rawAngle += rawAngle < 0 ? Mathf.PI * 2 : 0;
 
-		return (int)(8f - (rawAngle / (Mathf.PI * 2)) * 8);
+		return (int)(8f - rawAngle / (Mathf.PI * 2) * 8);
 	}
 
 	Vector3 Circularize(int index) {
-		float angle = Mathf.PI / 2 + index / 8.0f * Mathf.PI * 2;
+		float angle = Mathf.PI / 2 + (8 - index) / 8.0f * Mathf.PI * 2;
 
 		return new Vector3(
 			Mathf.Cos(angle) * CircleRadius + worldTouchPosition.x,

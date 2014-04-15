@@ -16,7 +16,6 @@ public class TowerSelectionMenu : MonoBehaviour {
 
     void displayTowers() {
         // while not end of list, create tower object along bottom of screen
-
     }
 
 	// Use this for initialization
