@@ -87,7 +87,7 @@ public class TowerController : MonoBehaviour {
 			// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
 		{
 			Debug.Log("Clicked the button with an image");
-			Application.LoadLevel(2);
+			Application.LoadLevel("level-1");
 
 			// use get component to get the prefab info for whichever prefab is selected
 		}
