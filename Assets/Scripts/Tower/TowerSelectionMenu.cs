@@ -12,7 +12,7 @@ public class TowerSelectionMenu : MonoBehaviour {
 	public List<CustomTower> towers;
 	public List<GameObject> towerInstances;
 
-	private string file = Application.dataPath + "/savedTowers";
+	private string file;
 
     void displayTowers() {
         // while not end of list, create tower object along bottom of screen
@@ -26,6 +26,8 @@ public class TowerSelectionMenu : MonoBehaviour {
 
 		towerInstances = new List<GameObject>(8);
 		towers = new List<CustomTower>(8);
+
+		file = Application.dataPath + "/savedTowers";
 		
 		loadTowers();
 	}
