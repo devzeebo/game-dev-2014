@@ -6,7 +6,7 @@ public class Grid : MonoBehaviour {
 	private GameObject[,] towers;
 	public int height = 10;
 	public int width = 15;
-	public Vector3 offsetVector = new Vector3(7.5f,5,10);
+	public Vector3 offsetVector = new Vector3(7.5f, 5.5f, 10);
 	// Use this for initialization
 	void Start () {
 		towers = new GameObject[width,height]; 
