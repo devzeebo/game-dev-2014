@@ -14,12 +14,10 @@ public class Grid : MonoBehaviour {
 
 	public Vector2 ScreenToGridPosition(Vector3 vector)
 	{
-		vector = Camera.main.ScreenToWorldPoint(vector) + offsetVector;
-		return new Vector2(Mathf.FloorToInt(vector.x),Mathf.FloorToInt(vector.y));
+		return WorldToGridPosition(Camera.main.ScreenToWorldPoint(vector));
 	}
 
-	public Vector3 GridToWorldPosition(Vector2 vector)
-	{
+	public Vector3 GridToWorldPosition(Vector2 vector) {
 		return new Vector3(vector.x - offsetVector.x + 0.5f, vector.y - offsetVector.y + 0.5f, 0);
 	}
 
@@ -27,14 +25,23 @@ public class Grid : MonoBehaviour {
 		return GridToWorldPosition(ScreenToGridPosition(vector));
 	}
 
+	public Vector2 WorldToGridPosition(Vector3 vector) {
+		vector = vector + offsetVector;	
+		return new Vector2(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y));
+	}
+
     public GameObject GetAt(int x, int y) {
         return towers[x, y];
     }
 
+	public void PutAt(int x, int y, GameObject obj) {
+		towers[x, y] = obj;
+	}
+
 	public bool PlaceTower(CustomTower tower, Vector3 position) {
 		GameObject spawnedObject = null;
 		Vector2 gridPos = ScreenToGridPosition(position);
-		//Debug.Log(gridPos);
+		
 		if(gridPos.x >= width || gridPos.y >= height || gridPos.x < 0 || gridPos.y < 0)
 		{
 			Debug.Log("Outisde Grid");
@@ -42,7 +49,7 @@ public class Grid : MonoBehaviour {
 		else if(towers[(int)gridPos.x,(int)gridPos.y] == null)
 		{
 			spawnedObject = tower.Spawn(GridToWorldPosition(gridPos));
-			towers[(int)gridPos.x,(int)gridPos.y] = spawnedObject;
+			towers[(int)gridPos.x, (int)gridPos.y] = spawnedObject;
 		}
 		else
 		{
