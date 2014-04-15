@@ -43,3 +43,23 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: Path
+    userID: 3
+    uniqueID: 800649073
+    locked: 0
+  - name: Enemy
+    userID: 2
+    uniqueID: 286609683
+    locked: 0
+  - name: Tower
+    userID: 5
+    uniqueID: 2689663855
+    locked: 0
+  - name: Bullet
+    userID: 4
+    uniqueID: 3261574579
+    locked: 0
+  - name: HUD
+    userID: 1
+    uniqueID: 604970697
+    locked: 0

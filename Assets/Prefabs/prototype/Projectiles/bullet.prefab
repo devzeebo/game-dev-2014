@@ -44,6 +44,7 @@ MonoBehaviour:
   speed: 10
   maxTime: 1000
   DestroyOnHit: 1
+  experienceComponents: []
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -74,9 +75,9 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 3261574579
   m_Sprite: {fileID: 21300000, guid: 1d136723cae404f98a1d941ccfffb686, type: 3}
   m_Color: {r: .529411793, g: .529411793, b: .529411793, a: 1}
 --- !u!1001 &100100000

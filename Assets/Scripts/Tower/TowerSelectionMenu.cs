@@ -41,8 +41,12 @@ public class TowerSelectionMenu : MonoBehaviour {
 		if (obj != null) {
 			DontDestroyOnLoad(obj);
 			obj.transform.parent = transform;
+			obj.GetComponent<SpriteRenderer>().sortingLayerName = "HUD";
 			foreach (MonoBehaviour script in obj.GetComponentsInChildren<MonoBehaviour>()) {
 				Destroy(script);
+			}
+			foreach (SpriteRenderer renderer in obj.GetComponentsInChildren<SpriteRenderer>()) {
+				renderer.sortingLayerName = "HUD";
 			}
 			CustomTowerBehaviour tower = obj.AddComponent<CustomTowerBehaviour>();
 			tower.customTower.CloneFrom(towers[index]);
