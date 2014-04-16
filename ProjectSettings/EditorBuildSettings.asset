@@ -11,3 +11,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tower Customizer.unity
   - enabled: 1
     path: Assets/Scenes/level-1.unity
+  - enabled: 1
+    path: Assets/Scenes/Level Select.unity
+  - enabled: 1
+    path: Assets/Scenes/Summer.unity
+  - enabled: 1
+    path: Assets/Scenes/Winter.unity
