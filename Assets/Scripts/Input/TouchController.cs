@@ -25,14 +25,14 @@ public class TouchController : MonoBehaviour {
 		handler.handleInput();
 
 		foreach(InputEvent e in handler.Events) {
-			if (e.phase == TouchPhase.Began) {
+			Vector3 worldPos = Utilities.ScreenToWorld(e.position);
+			if (e.phase == TouchPhase.Began && grid.IsValid(grid.WorldToGridPosition(worldPos))) {
 				touchPosition = e.position;
-				worldTouchPosition = Utilities.ScreenToWorld(touchPosition);
+				worldTouchPosition = Utilities.ScreenToWorld(touchPosition);;
 				ShowTowers();
 			}
 			if (e.phase == TouchPhase.Ended) {
 				if (Vector3.Distance(e.position, touchPosition) > DeadZone) {
-
 					bool placed = grid.PlaceTower(TowerSelectionMenu.Instance.towers[GetIndex(e.position)], touchPosition);
 				}
 				
