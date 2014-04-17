@@ -14,6 +14,8 @@ public class TouchController : MonoBehaviour {
 	public float DeadZone = 100f;
 	public float CircleRadius = 2f;
 
+	public bool placingTower = false;
+
 	// Use this for initialization
 	void Start () {
 		grid = GetComponent<Grid>();
@@ -26,17 +28,20 @@ public class TouchController : MonoBehaviour {
 
 		foreach(InputEvent e in handler.Events) {
 			Vector3 worldPos = Utilities.ScreenToWorld(e.position);
-			if (e.phase == TouchPhase.Began && grid.IsValid(grid.WorldToGridPosition(worldPos))) {
+			if (!placingTower && e.phase == TouchPhase.Began && grid.IsValid(grid.WorldToGridPosition(worldPos))) {
 				touchPosition = e.position;
 				worldTouchPosition = Utilities.ScreenToWorld(touchPosition);;
+				
 				ShowTowers();
+				placingTower = true;
 			}
-			if (e.phase == TouchPhase.Ended) {
+			if (placingTower && e.phase == TouchPhase.Ended) {
 				if (Vector3.Distance(e.position, touchPosition) > DeadZone) {
 					bool placed = grid.PlaceTower(TowerSelectionMenu.Instance.towers[GetIndex(e.position)], touchPosition);
 				}
 				
 				HideTowers();
+				placingTower = false;
 			}
 		}
 	}
