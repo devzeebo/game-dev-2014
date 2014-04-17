@@ -17,20 +17,20 @@ public class LevelSelection : MonoBehaviour {
         {
             // level select 2
             Debug.Log("Clicked the button with an image");
-            Application.LoadLevel(2);
+            Application.LoadLevel("level-1");
         }
         if (GUI.Button(this.CenteredRect(this.Width(.5f), this.Height(.5f), this.Width(.10f), this.Width(.10f)), "Summer"))
         {
             // level select 4
           
             Debug.Log("Clicked the button with an image");
-            Application.LoadLevel(4);
+            Application.LoadLevel("Summer");
         }
         if (GUI.Button(this.CenteredRect(this.Width(.66f), this.Height(.5f), this.Width(.10f), this.Width(.10f)), "Winter"))
         {
             // level select 5
             Debug.Log("Clicked the button with an image");
-            Application.LoadLevel(5);
+            Application.LoadLevel("Winter");
         }
     }
 }

@@ -8,7 +8,7 @@ public class StartButton : MonoBehaviour {
 	
 	}
 	void OnMouseDown() {
-			Application.LoadLevel(1);
+			Application.LoadLevel("Tower Customizer");
 	}
 	// Update is called once per frame
 	void Update () {

@@ -15,15 +15,15 @@ public class MainMenu : MonoBehaviour {
     void OnGUI()
     {
         // Menu Selection Window
-        if (GUI.Button(new Rect(this.Width(.0f), this.Height(.0f), this.Width(.25f), this.Height(.166f)), "Level Select"))
+        if (GUI.Button(new Rect(this.Width(.0f), this.Height(.0f), this.Width(.25f), this.Height(.166f)), "Tower Customize"))
         {
             Debug.Log("Goto Level Select");
-            Application.LoadLevel(3);
+            Application.LoadLevel("Tower Customizer");
         }
-        if (GUI.Button(new Rect(this.Width(.0f), this.Height(.166f), this.Width(.25f), this.Height(.166f)), "Tower Customize"))
+        if (GUI.Button(new Rect(this.Width(.0f), this.Height(.166f), this.Width(.25f), this.Height(.166f)), "Level Select"))
         {
             Debug.Log("Clicked the button with an image");
-            Application.LoadLevel(1);
+            Application.LoadLevel("Level Select");
         }
         if (GUI.Button(new Rect(this.Width(.0f), this.Height(.333f), this.Width(.25f), this.Height(.166f)), "Achievements"))
         {

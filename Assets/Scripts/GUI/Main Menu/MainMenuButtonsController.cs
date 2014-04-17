@@ -25,7 +25,7 @@ public class MainMenuButtonsController : MonoBehaviour {
         if (GUI.Button(this.CenteredRect(this.Width(.5f), ButtonHeight(0), buttonheight, buttonheight), "Start"))
 			// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
 		{
-			Application.LoadLevel(1);
+			Application.LoadLevel("Tower Customizer");
 			Debug.Log("Clicked the button with an image");
 			
 		}

@@ -5,28 +5,28 @@ using System.Collections.Generic;
 public class BackTracker : MonoBehaviour {
 
 	private bool backPushed;
-    public List<int> SceneTracker = new List<int>();
+    public List<string> SceneTracker = new List<string>();
 
-	private int currentLevel;
+	private string currentLevel;
 
 	public void Backup() {
-		if (SceneTracker.Count > 0) {
+		if (SceneTracker.Count > 1) {
 			backPushed = true;
 			Application.LoadLevel(Pop());
 		}
 	}
 
-	public int Pop() {
-		int ret = SceneTracker[SceneTracker.Count - 1];
+	public string Pop() {
+		string ret = SceneTracker[SceneTracker.Count - 1];
 		SceneTracker.RemoveAt(SceneTracker.Count - 1);
 		return ret;
 	}
 
-	public void Push(int level) {
+	public void Push(string level) {
 		SceneTracker.Add(level);
 	}
 
-	public int Peek() {
+	public string Peek() {
 		return SceneTracker[SceneTracker.Count - 1];
 	}
 
@@ -47,20 +47,22 @@ public class BackTracker : MonoBehaviour {
 		Debug.Log("LEVEL " + x + " LOADED");
 		Print();
 
-		if (!backPushed && currentLevel != x) {
+		if (!backPushed && currentLevel != Application.loadedLevelName) {
 			Push(currentLevel);
-			currentLevel = x;
 		}
 		backPushed = false;
+        currentLevel = Application.loadedLevelName;
 
 		Print();
 	}
 
     void OnGUI()
     {
+        if (Application.loadedLevel < 1) { return; }
+
         if (GUI.Button(new Rect(this.Width(.0f), this.Height(.833f), this.Width(.25f), this.Height(.166f)), "Back"))
         {
-            Debug.Log("Clicked the button with an image");
+            Debug.Log("Clicked the BackButton");
             Backup();
         }
     }
