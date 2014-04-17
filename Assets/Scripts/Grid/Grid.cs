@@ -44,7 +44,7 @@ public class Grid : MonoBehaviour {
 		
 		if(gridPos.x >= width || gridPos.y >= height || gridPos.x < 0 || gridPos.y < 0)
 		{
-			Debug.Log("Outisde Grid");
+			Debug.Log("Outside Grid");
 		}
 		else if(towers[(int)gridPos.x,(int)gridPos.y] == null)
 		{
@@ -56,6 +56,10 @@ public class Grid : MonoBehaviour {
 			Debug.Log("Tower Already Placed.");
 		}
 		return spawnedObject != null;
+	}
+
+	public bool IsValid(Vector2 gridPos) {
+		return gridPos.x >= 0 && gridPos.y >= 0 && gridPos.x < 15 && gridPos.y < 10;
 	}
 
 	// Update is called once per frame
