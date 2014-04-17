@@ -28,14 +28,17 @@ public class MainMenu : MonoBehaviour {
         if (GUI.Button(new Rect(this.Width(.0f), this.Height(.333f), this.Width(.25f), this.Height(.166f)), "Achievements"))
         {
             Debug.Log("Clicked the button with an image");
+            Application.LoadLevel("Achievements");
         }
         if (GUI.Button(new Rect(this.Width(.0f), this.Height(.5f), this.Width(.25f), this.Height(.166f)), "Unlocks"))
         {
             Debug.Log("Clicked the button with an image");
+            Application.LoadLevel("Unlocks");
         }
         if (GUI.Button(new Rect(this.Width(.0f), this.Height(.666f), this.Width(.25f), this.Height(.166f)), "Shops"))
         {
             Debug.Log("Clicked the button with an image");
+            Application.LoadLevel("Shops");
         }
         /*
         if (GUI.Button(new Rect(this.Width(.0f), this.Height(.833f), this.Width(.25f), this.Height(.166f)), "Back"))
