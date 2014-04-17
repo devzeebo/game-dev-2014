@@ -5,7 +5,7 @@ public class MMCBackButton : MonoBehaviour {
     public BackTracker BT;
 	// Use this for initialization
 	void Start () {
-        BT.UpdateStack(Application.loadedLevel);
+        //BT.UpdateStack(Application.loadedLevel);
 	}
 	
 	// Update is called once per frame

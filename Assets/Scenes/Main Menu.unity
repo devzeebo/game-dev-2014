@@ -170,7 +170,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1275933022
 MonoBehaviour:
@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545287dc85be19a4d86657054ec26902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneTracker: 
 --- !u!1 &1338493624
 GameObject:
   m_ObjectHideFlags: 0
