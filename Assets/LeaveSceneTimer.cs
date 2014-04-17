@@ -16,7 +16,7 @@ public class LeaveSceneTimer : MonoBehaviour {
 
     void OnGUI()
     {
-        GUIStyle FlashText =new GUIStyle();
-        GUI.Label(new Rect(this.Width(.5f), this.Height(.5f), this.Width(.2f), this.Height(.2f)), "Fluff Command");
+       // GUIStyle FlashText =new GUIStyle();
+       // GUI.Label(new Rect(this.Width(.5f), this.Height(.5f), this.Width(.2f), this.Height(.2f)), "Fluff Command");
     }
 }
