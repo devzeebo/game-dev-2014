@@ -1040,6 +1040,7 @@ GameObject:
   - 114: {fileID: 2144867045}
   - 114: {fileID: 2144867044}
   - 114: {fileID: 2144867043}
+  - 114: {fileID: 2144867048}
   m_Layer: 0
   m_Name: Global
   m_TagString: Untagged
@@ -1071,6 +1072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeadZone: 100
   CircleRadius: 1.5
+  placingTower: 0
 --- !u!114 &2144867045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,3 +1110,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &2144867048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2144867042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98db0bdf41ed2a2499a04d5abc327b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CashPerSecond: 1
+  Cash: 0
