@@ -24,7 +24,7 @@ public class TowerButton : MonoBehaviour {
 	// this code modified from http://docs.unity3d.com/Documentation/ScriptReference/GUI.Button.html
 	void OnGUI() {
 	//	this code modified from:	http://docs.unity3d.com/Documentation/ScriptReference/GUI.BeginScrollView.html
-
+        scrollPosition= GUI.BeginScrollView(new Rect(this.Width(.75f)+30,this.Height(0f),this.Width(.25f)-30,this.Height(.25f*(TowerComponents.Count+1))),scrollPosition,new Rect(this.Width(.75f)-30,this.Height(0f),this.Width(,25f)-30,this.Height(1f)));
 		for(int i=0;i<TowerComponents.Count;i++)
 		{
 			Vector2 position = new Vector2(this.Width(.875f),this.Height(0.25f*(i+1)));
@@ -34,6 +34,7 @@ public class TowerButton : MonoBehaviour {
                 controller.SetComponent(Module, TowerComponents[i]);
 			}
 		}
+        GUI.EndScrollView();
 		
 	}
 
