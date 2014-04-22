@@ -5,26 +5,19 @@ using System.Collections.Generic;
 public class Wave : MonoBehaviour {
 
 	public List<Wave> waves;
+	public GameObject Enemy;
 
 	public float spawnSpeed;
 
-	public float cooldown;
-
-	public List<Finished> callbacks;
-
-	public delegate void Finished();
+	public int repeatCount = 1;
 	
 	// Use this for initialization
-	public virtual void Start () {
+	void Start () {
 		waves = new List<Wave>();
 
 		for (int x = 0; x < transform.childCount; x++) {
 			waves.Add(transform.GetChild(x).GetComponent<Wave>());
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		waves.Sort((a, b) => a.gameObject.name.CompareTo(b.gameObject.name));
 	}
 }

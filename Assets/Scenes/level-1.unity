@@ -335,6 +335,48 @@ SpriteRenderer:
   m_SortingLayerID: 800649073
   m_Sprite: {fileID: 21300000, guid: 750fa9b12d1514e268f1c680d7f68913, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &396761552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 396761553}
+  - 114: {fileID: 396761554}
+  m_Layer: 0
+  m_Name: 1Fast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &396761553
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 396761552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1503780936}
+--- !u!114 &396761554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 396761552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e917da68b0ca54b834fde5dd193fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves: []
+  Enemy: {fileID: 100002, guid: b382ec0720438c04d9775e348cfd2a28, type: 2}
+  spawnSpeed: .200000003
+  repeatCount: 1
 --- !u!1 &399654863
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,11 +404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b16ebd248551e4c9e1d83accb7ecd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: []
-  spawnSpeed: 1
-  cooldown: 0
   path: {fileID: 274308921}
-  EnemyPrefab: {fileID: 100002, guid: b382ec0720438c04d9775e348cfd2a28, type: 2}
+  cooldown: 0
 --- !u!4 &399654865
 Transform:
   m_ObjectHideFlags: 0
@@ -376,8 +415,52 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .59309411, y: -.237247273, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 643765729}
+  - {fileID: 1503780936}
   m_Father: {fileID: 0}
+--- !u!1 &526989998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 526990000}
+  - 114: {fileID: 526989999}
+  m_Layer: 0
+  m_Name: 2Slow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &526989999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 526989998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e917da68b0ca54b834fde5dd193fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves: []
+  Enemy: {fileID: 100002, guid: 235c69ab6ad26564aa66553db3a17d33, type: 2}
+  spawnSpeed: 1
+  repeatCount: 1
+--- !u!4 &526990000
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 526989998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1503780936}
 --- !u!1 &624384167
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +512,48 @@ SpriteRenderer:
   m_SortingLayerID: 800649073
   m_Sprite: {fileID: 21300000, guid: 750fa9b12d1514e268f1c680d7f68913, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &643765728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 643765729}
+  - 114: {fileID: 643765730}
+  m_Layer: 0
+  m_Name: Wave 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &643765729
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 643765728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.850953937, y: .905683458, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 399654865}
+--- !u!114 &643765730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 643765728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e917da68b0ca54b834fde5dd193fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves: []
+  Enemy: {fileID: 100002, guid: b382ec0720438c04d9775e348cfd2a28, type: 2}
+  spawnSpeed: .5
+  repeatCount: 5
 --- !u!1 &778104002
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +963,50 @@ SpriteRenderer:
   m_SortingLayerID: 800649073
   m_Sprite: {fileID: 21300000, guid: 750fa9b12d1514e268f1c680d7f68913, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1503780935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1503780936}
+  - 114: {fileID: 1503780937}
+  m_Layer: 0
+  m_Name: Wave 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1503780936
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1503780935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.850953937, y: .905683458, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 396761553}
+  - {fileID: 526990000}
+  m_Father: {fileID: 399654865}
+--- !u!114 &1503780937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1503780935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e917da68b0ca54b834fde5dd193fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves: []
+  Enemy: {fileID: 0}
+  spawnSpeed: 0
+  repeatCount: 10
 --- !u!1001 &1557526524
 Prefab:
   m_ObjectHideFlags: 0
