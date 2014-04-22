@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: module
+  m_Name: normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,12 +36,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9eba272fd57247439ac87212b068ca5, type: 3}
+  m_Script: {fileID: 11500000, guid: 67e0f9c90805b314484d2002ad0dfb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
-  attackSpeed: 100
-  attackDamageMultiplier: 1
+  projectilePrototype: {fileID: 100000, guid: 2e6ebc122259e49629938809ba9767c5, type: 2}
+  attackDamage: 35
+  attackSpeedMultiplier: 2
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -61,10 +61,10 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_SortingLayerID: 2689663855
-  m_Sprite: {fileID: 21300000, guid: 86158999de3e42241819fe3171727aca, type: 3}
-  m_Color: {r: .800000012, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 26aac84907d07c1498f161a143a8fcc6, type: 3}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
