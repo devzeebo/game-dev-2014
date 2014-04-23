@@ -256,8 +256,6 @@ MonoBehaviour:
   - {fileID: 100000, guid: c1309ad0211b03f419c81b0d07622139, type: 2}
   - {fileID: 100000, guid: efc43a94aa7e4494dbdd1e2c9de4bf4e, type: 2}
   - {fileID: 100000, guid: d17da94009a5ddf4aafb8163af30276c, type: 2}
-  - {fileID: 100000, guid: 86fc17a55ac2e7c4d88c58a1ac392021, type: 2}
-  - {fileID: 100000, guid: 394dbd3d26f025c4bb0b52614e94c1e4, type: 2}
   Module: Weapon
 --- !u!1 &1208839846
 GameObject:
