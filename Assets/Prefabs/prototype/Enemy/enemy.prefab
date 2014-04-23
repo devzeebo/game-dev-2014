@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c985f21d849d348529bf94bc173c4261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 5
   health: 100
   HealthBar: {fileID: 100000, guid: 0e6ee0ca2314fa54e940f5f54f0dd058, type: 2}
 --- !u!114 &11400002
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fe49190f231bc49912ddbe5182aea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

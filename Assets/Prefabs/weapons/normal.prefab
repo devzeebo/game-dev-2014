@@ -40,8 +40,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrototype: {fileID: 100000, guid: 72c98d3b9009f461fa71c978122581d4, type: 2}
-  attackDamage: 35
-  attackSpeedMultiplier: 2
+  attackDamage: 1
+  attackSpeedMultiplier: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

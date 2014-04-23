@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: fast
+  m_Name: Strong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,8 +40,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
-  attackSpeed: 200
-  attackDamageMultiplier: 1
+  attackSpeed: 100
+  attackDamageMultiplier: 2
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -64,7 +64,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_SortingLayerID: 2689663855
   m_Sprite: {fileID: 21300000, guid: e31c493bd3889d6428c95fcea0df88b9, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
