@@ -30,14 +30,14 @@ public class TowerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        TowerCenter = Utilities.ScreenToWorld(new Vector2(this.Width(.5f), this.Height(.25f)));
+        TowerCenter = GUIUtilities.GuiScreenToWorld(new Vector2(this.Width(.5f), this.Height(.25f)));
         TowerBase.SetActive(true);
         TowerModule.SetActive(false);
         TowerWeapon.SetActive(false);
 
         buttonheight = this.Height(.2f);
         for (int i = 0; i < 8; i++) {
-			SavedTowers[i].transform.position = Utilities.ScreenToWorld(new Vector2(this.Width(.3f) + this.Height(.125f) * i, this.Height(.9f)));
+			SavedTowers[i].transform.position = GUIUtilities.GuiScreenToWorld(new Vector2(this.Width(.3f) + this.Height(.125f) * i, this.Height(.9f)));
 			SavedTowers[i].SetActive(true);
         }
         SelectSlot(0);

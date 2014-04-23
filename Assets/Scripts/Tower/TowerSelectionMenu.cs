@@ -61,6 +61,13 @@ public class TowerSelectionMenu : MonoBehaviour {
 		}
 	}
 
+	void OnLevelWasLoaded(int x) {
+		bg.SetActive(false);
+		for (int i = 0; i < towerInstances.Count; i++) {
+			towerInstances[i].SetActive(false);
+		}
+	}
+
 	private static TowerSelectionMenu instance;
 	public static TowerSelectionMenu Instance {
 		get {

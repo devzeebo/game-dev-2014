@@ -6,6 +6,14 @@ public static class GUIUtilities {
 
 	private static Dictionary<string, GuiPosition> animations = new Dictionary<string, GuiPosition>();
 
+	private static Vector3 guiScale = new Vector3(1, -1, 1);
+
+	public static Vector3 GuiScreenToWorld(Vector2 pos) {
+		Vector3 world = Utilities.ScreenToWorld(pos);
+		world.Scale(guiScale);
+		return world;
+	}
+
 	public static Rect CenteredRect(this MonoBehaviour behaviour, float x, float y, float width, float height)
 	{
 		return new Rect(x-width/2, y-height/2, width, height);

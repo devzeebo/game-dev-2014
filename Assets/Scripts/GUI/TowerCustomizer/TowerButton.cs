@@ -28,7 +28,7 @@ public class TowerButton : MonoBehaviour {
 		for(int i=0;i<TowerComponents.Count;i++)
 		{
 			Vector2 position = new Vector2(this.Width(.875f),this.Height(0.25f*(i+1)));
-			spawnedObjects[i].transform.position = Utilities.ScreenToWorld(position);
+			spawnedObjects[i].transform.position = GUIUtilities.GuiScreenToWorld(position);
 			if(GUI.Button(this.CenteredRect(position.x, position.y, this.Height(.2f), this.Height(.2f)),TowerComponents[i].gameObject.name))
 			{
                 controller.SetComponent(Module, TowerComponents[i]);
