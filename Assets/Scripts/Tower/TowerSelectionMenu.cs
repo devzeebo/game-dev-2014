@@ -9,6 +9,8 @@ public class TowerSelectionMenu : MonoBehaviour {
 	public GameObject defaultModule;
 	public GameObject defaultWeapon;
 
+	public GameObject bg;
+
 	public List<CustomTower> towers;
 	public List<GameObject> towerInstances;
 
@@ -27,7 +29,7 @@ public class TowerSelectionMenu : MonoBehaviour {
 		towers = new List<CustomTower>(8);
 
 		file = Application.dataPath + "/savedTowers";
-		
+
 		loadTowers();
 	}
 
