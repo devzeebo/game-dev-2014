@@ -42,7 +42,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   module: {fileID: 0}
   targets: []
-  attackSpeedMultiplier: .300000012
+  attackSpeedMultiplier: 1
   attackDamageMultiplier: 1
   attackCooldown: 0
   range: 3
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea6f0ab2aea45145b3eab9e714c67f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 10
+  Cost: 20
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
