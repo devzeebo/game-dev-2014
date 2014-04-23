@@ -30,7 +30,7 @@ public class TowerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        TowerCenter = GUIUtilities.GuiScreenToWorld(new Vector2(this.Width(.5f), this.Height(.25f)));
+        TowerCenter = GUIUtilities.GuiScreenToWorld(new Vector2(this.Width(.40f), this.Height(.33f)));
         TowerBase.SetActive(true);
         TowerModule.SetActive(false);
         TowerWeapon.SetActive(false);
@@ -81,7 +81,9 @@ public class TowerController : MonoBehaviour {
                 SelectSlot(i);
             }
         }
+        GUI.Box(this.CenteredRect(this.Width(.6f), this.Height(.33f), this.Width(.15f), this.Height(.33f)), "Tower Stats \n\nCost: " + WorkingTower.Cost + "\nDamage: " + WorkingTower.towerBase.GetComponent<TowerBase>().GetAttackDamage() + "\nSpeed: "+WorkingTower.towerBase.GetComponent<TowerBase>().GetAttackSpeed() + "\nRange: " + "\n");
 
+        /*\n
         // Use Tower Button
         if (GUI.Button(this.CenteredRect(this.Width(.5f), this.Height(.66f), buttonheight, buttonheight), "Play Game"))
 			// this code refrences http://docs.unity3d.com/Documentation/ScriptReference/Rect.html
@@ -91,6 +93,7 @@ public class TowerController : MonoBehaviour {
 
 			// use get component to get the prefab info for whichever prefab is selected
 		}
+        //*/
 		// Component Selection Window
         if (GUI.Button(new Rect(this.Width(.75f), this.Height(.66f), buttonwidth, this.Height(.33f)), "b\na\ns\ne"))
 		{
