@@ -21,7 +21,7 @@ public class Health : MonoBehaviour {
 		HealthBar.transform.localScale = new Vector3(health/ maxHealth, 1f);
 	}
 
-	public float Damage(float damage, string[] experienceComponents) {
+	public float Damage(float damage, params string[] experienceComponents) {
 
 		float experience = Mathf.Min(damage / maxHealth, 1) * 10;
 		foreach (string s in experienceComponents) {

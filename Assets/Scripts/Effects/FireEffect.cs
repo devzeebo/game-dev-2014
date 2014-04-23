@@ -3,26 +3,26 @@ using System.Collections;
 
 public class FireEffect : MonoBehaviour
 {
+	public float DamagePerSecond;
 
-    public float initialSpeed;
-
-    public float speedModifier;
     public float timeRemaining;
 
-    // Use this for initialization
-    void Start()
-    {
-        initialSpeed = gameObject.GetComponent<FollowPath>().speed;
-        gameObject.GetComponent<FollowPath>().speed = gameObject.GetComponent<FollowPath>().speed * speedModifier;
-    }
+	private Health health;
+
+	public string[] experienceComponents;
+
+	void Start() {
+		health = gameObject.GetComponent<Health>();
+	}
 
     // Update is called once per frame
     void Update()
     {
-        if ((timeRemaining -= Time.deltaTime) < 0)
-        {
-            gameObject.GetComponent<FollowPath>().speed = initialSpeed;
+		health.Damage(DamagePerSecond * Mathf.Min(Time.deltaTime, timeRemaining), experienceComponents);
+
+        if ((timeRemaining -= Time.deltaTime) < 0) {
             DestroyImmediate(this);
+			return;
         }
     }
 }

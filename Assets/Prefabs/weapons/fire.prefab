@@ -42,7 +42,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrototype: {fileID: 100000, guid: 5aae3e7b20dd14e18bb517fc2528f1eb, type: 2}
   attackDamage: 2
-  attackSpeedMultiplier: 1
+  attackSpeedMultiplier: .699999988
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
