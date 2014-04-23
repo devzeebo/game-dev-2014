@@ -1463,4 +1463,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CashPerSecond: 1
-  Cash: 0
+  Cash: 60

@@ -37,7 +37,11 @@ public class TouchController : MonoBehaviour {
 			}
 			if (placingTower && e.phase == TouchPhase.Ended) {
 				if (Vector3.Distance(e.position, touchPosition) > DeadZone) {
-					bool placed = grid.PlaceTower(TowerSelectionMenu.Instance.towers[GetIndex(e.position)], touchPosition);
+
+					CustomTower tower = TowerSelectionMenu.Instance.towers[GetIndex(e.position)];
+					if (GameStats.BuyTower(tower.Cost)) {
+						bool placed = grid.PlaceTower(tower, touchPosition);
+					}
 				}
 				
 				HideTowers();
