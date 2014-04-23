@@ -28,8 +28,13 @@ public class TowerButton : MonoBehaviour {
 		for(int i=0;i<TowerComponents.Count;i++)
 		{
 			Vector2 position = new Vector2(this.Width(.875f),this.Height(0.25f*(i+1)));
+<<<<<<< HEAD
 			spawnedObjects[i].transform.position = Utilities.ScreenToWorld(position);
+            if (GUI.Button(this.CenteredRect(position.x, position.y, this.Height(.2f), this.Height(.2f)), TowerComponents[i].gameObject.name + "\n\n" + TowerComponents[i].GetComponent<ComponentCost>().Cost))
+=======
+			spawnedObjects[i].transform.position = GUIUtilities.GuiScreenToWorld(position);
 			if(GUI.Button(this.CenteredRect(position.x, position.y, this.Height(.2f), this.Height(.2f)),TowerComponents[i].gameObject.name))
+>>>>>>> c8d3db7c015e238efce2f5b10a386e3bb626749a
 			{
                 controller.SetComponent(Module, TowerComponents[i]);
 			}
