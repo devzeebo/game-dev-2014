@@ -37,7 +37,11 @@ public class TouchController : MonoBehaviour {
 			}
 			if (placingTower && e.phase == TouchPhase.Ended) {
 				if (Vector3.Distance(e.position, touchPosition) > DeadZone) {
-					bool placed = grid.PlaceTower(TowerSelectionMenu.Instance.towers[GetIndex(e.position)], touchPosition);
+
+					CustomTower tower = TowerSelectionMenu.Instance.towers[GetIndex(e.position)];
+					if (GameStats.BuyTower(tower.Cost)) {
+						bool placed = grid.PlaceTower(tower, touchPosition);
+					}
 				}
 				
 				HideTowers();
@@ -47,6 +51,8 @@ public class TouchController : MonoBehaviour {
 	}
 
 	void ShowTowers() {
+		TowerSelectionMenu.Instance.bg.transform.position = worldTouchPosition;
+		TowerSelectionMenu.Instance.bg.SetActive(true);
 		for (int i = 0; i < 8; i++) {
 			TowerSelectionMenu.Instance.towerInstances[i].transform.position = Circularize(i);
 			TowerSelectionMenu.Instance.towerInstances[i].SetActive(true);
@@ -54,6 +60,7 @@ public class TouchController : MonoBehaviour {
 	}
 
 	void HideTowers() {
+		TowerSelectionMenu.Instance.bg.SetActive(false);
 		for (int i = 0; i < 8; i++) {
 			TowerSelectionMenu.Instance.towerInstances[i].SetActive(false);
 		}
@@ -72,7 +79,7 @@ public class TouchController : MonoBehaviour {
 
 		return new Vector3(
 			Mathf.Cos(angle) * CircleRadius + worldTouchPosition.x,
-			Mathf.Sin(angle) * CircleRadius - worldTouchPosition.y,
+			Mathf.Sin(angle) * CircleRadius + worldTouchPosition.y,
 			0
 		);
 	}

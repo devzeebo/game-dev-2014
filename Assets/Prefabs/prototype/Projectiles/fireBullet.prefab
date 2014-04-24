@@ -9,8 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 114: {fileID: 11400000}
   - 135: {fileID: 13500000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: fireBullet
   m_TagString: Untagged
@@ -37,7 +37,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03c35ba9a2ff846fa82528de54468dd1, type: 3}
+  m_Script: {fileID: 11500000, guid: ed891be8493139f429cdbcba830e0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
@@ -45,6 +45,8 @@ MonoBehaviour:
   maxTime: 1000
   DestroyOnHit: 1
   experienceComponents: []
+  DamagePerSecond: 1
+  effectTime: 3
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

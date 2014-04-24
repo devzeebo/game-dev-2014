@@ -106,11 +106,11 @@ public class TowerBase : MonoBehaviour {
 
 	}
 
-    float GetAttackDamage() {
+    public float GetAttackDamage() {
         return module.weapon.attackDamage * module.attackDamageMultiplier * attackDamageMultiplier;
     }
 
-    float GetAttackSpeed() {
+    public float GetAttackSpeed() {
 		return 100f / (attackSpeedMultiplier * module.attackSpeed * module.weapon.attackSpeedMultiplier);
     }
 

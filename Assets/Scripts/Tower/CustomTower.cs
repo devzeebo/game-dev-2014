@@ -15,6 +15,16 @@ public class CustomTower {
 		towerWeapon = tower.towerWeapon;
 	}
 
+	public float Cost {
+		get {
+			return GetCost(towerBase) + GetCost(towerModule) + GetCost(towerWeapon);
+		}
+	}
+
+	private float GetCost(GameObject obj) {
+		return obj.GetComponent<ComponentCost>().Cost;
+	}
+
 	public GameObject Spawn(Vector3 location) {
 
 		if (towerBase != null) {
