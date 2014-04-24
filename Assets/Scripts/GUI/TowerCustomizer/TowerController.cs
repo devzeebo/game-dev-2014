@@ -69,6 +69,10 @@ public class TowerController : MonoBehaviour {
 
         WorkingSlot = slot;
 		WorkingTower = CustomTowers[slot];
+
+		WorkingTower.towerBase.GetComponent<TowerBase>().module = WorkingTower.towerModule.GetComponent<TowerModule>();
+		WorkingTower.towerModule.GetComponent<TowerModule>().weapon = WorkingTower.towerWeapon.GetComponent<TowerWeapon>();
+
         WorkingTowerSpawn = WorkingTower.Spawn(TowerCenter);
         WorkingTowerSpawn.transform.localScale = new Vector3(2f, 2f, 0f);
     }
