@@ -818,7 +818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves: []
-  Enemy: {fileID: 100002, guid: 5ef54596b177df646b2e0ed0365b820c, type: 2}
+  Enemy: {fileID: 100002, guid: 403ae5af591a07e47a08ef05ec039bcb, type: 2}
   spawnSpeed: 1
   repeatCount: 1
 --- !u!1 &476493305
@@ -903,7 +903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves: []
-  Enemy: {fileID: 100002, guid: b382ec0720438c04d9775e348cfd2a28, type: 2}
+  Enemy: {fileID: 100002, guid: a31aaba2e0a2ce8448309ee2a0dc8175, type: 2}
   spawnSpeed: .5
   repeatCount: 1
 --- !u!1 &526989998
@@ -2005,7 +2005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves: []
-  Enemy: {fileID: 100002, guid: 56d007e2d960ab84ca89f7e4599ef85b, type: 2}
+  Enemy: {fileID: 100002, guid: 210a4f37718679f4981c56bfc7c89e8e, type: 2}
   spawnSpeed: .5
   repeatCount: 1
 --- !u!1 &1171546857
@@ -2534,7 +2534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves: []
-  Enemy: {fileID: 100002, guid: 56d007e2d960ab84ca89f7e4599ef85b, type: 2}
+  Enemy: {fileID: 100002, guid: 210a4f37718679f4981c56bfc7c89e8e, type: 2}
   spawnSpeed: .5
   repeatCount: 1
 --- !u!1 &1673068812
@@ -2626,7 +2626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves: []
-  Enemy: {fileID: 100002, guid: 235c69ab6ad26564aa66553db3a17d33, type: 2}
+  Enemy: {fileID: 100002, guid: b41d4c3baa500ca49a628a75b68395ce, type: 2}
   spawnSpeed: .5
   repeatCount: 1
 --- !u!1 &1762308547
@@ -2892,7 +2892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves: []
-  Enemy: {fileID: 100002, guid: 235c69ab6ad26564aa66553db3a17d33, type: 2}
+  Enemy: {fileID: 100002, guid: 56d007e2d960ab84ca89f7e4599ef85b, type: 2}
   spawnSpeed: .5
   repeatCount: 1
 --- !u!1 &1857169685
@@ -2980,7 +2980,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
-  repeatCount: 20
+  repeatCount: 10
 --- !u!1 &2008617469
 GameObject:
   m_ObjectHideFlags: 0
@@ -3071,7 +3071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves: []
-  Enemy: {fileID: 100002, guid: 235c69ab6ad26564aa66553db3a17d33, type: 2}
+  Enemy: {fileID: 100002, guid: a31aaba2e0a2ce8448309ee2a0dc8175, type: 2}
   spawnSpeed: 1
   repeatCount: 1
 --- !u!1 &2072345438
