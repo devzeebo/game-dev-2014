@@ -7,6 +7,7 @@ public class HUD : MonoBehaviour {
 
 	public static string message;
 	public static CustomTower TowerMessage;
+	public static string Wave;
 
 	private Rect InfoCenterRect;
 
@@ -52,6 +53,9 @@ public class HUD : MonoBehaviour {
 		if (TowerMessage != null) {
 			ShowTowerMessage();
 		}
+		if (Wave != null) {
+			ShowWaveMessage();
+		}
 	}
 
 	private void ShowTowerMessage() {
@@ -92,5 +96,15 @@ public class HUD : MonoBehaviour {
 			this.Width(.1f, InfoCenterRect.width),
 			InfoCenterRect.height
 			), stats2, RightAlignLabel);
+	}
+
+	private void ShowWaveMessage() {
+		GUI.Label (this.AnchoredRect(
+			GUIUtilities.RIGHT_MID,
+			InfoCenterRect.width + InfoCenterRect.xMin - this.Width(.07f, InfoCenterRect.width),
+			InfoCenterRect.height / 2,
+			this.Width(.07f, InfoCenterRect.width),
+			InfoCenterRect.height
+			), Wave, RightAlignLabel);
 	}
 }

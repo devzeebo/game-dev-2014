@@ -9,6 +9,8 @@ public class Wave : MonoBehaviour {
 
 	public float spawnSpeed;
 
+	public string waveCount;
+
 	public int repeatCount = 1;
 	
 	// Use this for initialization

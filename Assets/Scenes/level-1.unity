@@ -160,6 +160,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: BREAK
   repeatCount: 1
 --- !u!1 &26623009
 GameObject:
@@ -204,6 +205,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 12
   repeatCount: 20
 --- !u!1 &67552967
 GameObject:
@@ -246,6 +248,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
   spawnSpeed: 10
+  waveCount: 
   repeatCount: 1
 --- !u!1001 &93853970
 Prefab:
@@ -333,6 +336,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 9
   repeatCount: 1
 --- !u!1 &227639863
 GameObject:
@@ -375,6 +379,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
   spawnSpeed: 10
+  waveCount: 
   repeatCount: 1
 --- !u!1 &232795404
 GameObject:
@@ -417,6 +422,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
   spawnSpeed: 10
+  waveCount: 
   repeatCount: 1
 --- !u!1 &256384457
 GameObject:
@@ -582,6 +588,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 13
   repeatCount: 1
 --- !u!1 &382894770
 GameObject:
@@ -676,6 +683,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 7
   repeatCount: 1
 --- !u!1 &396761552
 GameObject:
@@ -718,6 +726,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: b382ec0720438c04d9775e348cfd2a28, type: 2}
   spawnSpeed: 2
+  waveCount: 
   repeatCount: 1
 --- !u!1 &399654863
 GameObject:
@@ -820,6 +829,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 403ae5af591a07e47a08ef05ec039bcb, type: 2}
   spawnSpeed: 1
+  waveCount: 
   repeatCount: 1
 --- !u!1 &476493305
 GameObject:
@@ -863,6 +873,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: INCOMING WAVE
   repeatCount: 1
 --- !u!1 &515515293
 GameObject:
@@ -905,6 +916,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: a31aaba2e0a2ce8448309ee2a0dc8175, type: 2}
   spawnSpeed: .5
+  waveCount: 
   repeatCount: 1
 --- !u!1 &526989998
 GameObject:
@@ -936,6 +948,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: b382ec0720438c04d9775e348cfd2a28, type: 2}
   spawnSpeed: 1
+  waveCount: 
   repeatCount: 1
 --- !u!4 &526990000
 Transform:
@@ -1091,6 +1104,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 3
   repeatCount: 20
 --- !u!1 &770975390
 GameObject:
@@ -1133,6 +1147,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
   spawnSpeed: 10
+  waveCount: 
   repeatCount: 1
 --- !u!1 &778104002
 GameObject:
@@ -1227,6 +1242,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 4
   repeatCount: 10
 --- !u!1 &798307579
 GameObject:
@@ -1269,6 +1285,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
   spawnSpeed: 10
+  waveCount: 
   repeatCount: 1
 --- !u!1001 &820958248
 Prefab:
@@ -1407,6 +1424,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 10
   repeatCount: 10
 --- !u!1 &884879567
 GameObject:
@@ -1529,6 +1547,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: b382ec0720438c04d9775e348cfd2a28, type: 2}
   spawnSpeed: .100000001
+  waveCount: 
   repeatCount: 2
 --- !u!1 &924969342
 GameObject:
@@ -1571,6 +1590,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
   spawnSpeed: 10
+  waveCount: 
   repeatCount: 1
 --- !u!1001 &960798987
 Prefab:
@@ -1792,6 +1812,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 11
   repeatCount: 1
 --- !u!1 &1040538661
 GameObject:
@@ -1835,6 +1856,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 2
   repeatCount: 1
 --- !u!1001 &1053695384
 Prefab:
@@ -1923,6 +1945,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 14
   repeatCount: 20
 --- !u!1 &1124554501
 GameObject:
@@ -1965,6 +1988,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
   spawnSpeed: 10
+  waveCount: 
   repeatCount: 1
 --- !u!1 &1141053070
 GameObject:
@@ -2007,6 +2031,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 210a4f37718679f4981c56bfc7c89e8e, type: 2}
   spawnSpeed: .5
+  waveCount: 
   repeatCount: 1
 --- !u!1 &1171546857
 GameObject:
@@ -2091,6 +2116,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
   spawnSpeed: 10
+  waveCount: 
   repeatCount: 1
 --- !u!1 &1377860790
 GameObject:
@@ -2183,6 +2209,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
   spawnSpeed: 10
+  waveCount: 
   repeatCount: 1
 --- !u!1001 &1462629577
 Prefab:
@@ -2321,6 +2348,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 1
   repeatCount: 10
 --- !u!1 &1505647098
 GameObject:
@@ -2364,6 +2392,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 15
   repeatCount: 1
 --- !u!1 &1519326385
 GameObject:
@@ -2407,6 +2436,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 17
   repeatCount: 1
 --- !u!1 &1536075245
 GameObject:
@@ -2450,6 +2480,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 5
   repeatCount: 1
 --- !u!1001 &1557526524
 Prefab:
@@ -2536,6 +2567,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 210a4f37718679f4981c56bfc7c89e8e, type: 2}
   spawnSpeed: .5
+  waveCount: 
   repeatCount: 1
 --- !u!1 &1673068812
 GameObject:
@@ -2628,6 +2660,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: b41d4c3baa500ca49a628a75b68395ce, type: 2}
   spawnSpeed: .5
+  waveCount: 
   repeatCount: 1
 --- !u!1 &1762308547
 GameObject:
@@ -2767,6 +2800,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 16
   repeatCount: 30
 --- !u!1 &1842175032
 GameObject:
@@ -2852,6 +2886,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 8
   repeatCount: 20
 --- !u!1 &1846244277
 GameObject:
@@ -2894,6 +2929,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 56d007e2d960ab84ca89f7e4599ef85b, type: 2}
   spawnSpeed: .5
+  waveCount: 
   repeatCount: 1
 --- !u!1 &1857169685
 GameObject:
@@ -2937,6 +2973,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: Wave 6
   repeatCount: 20
 --- !u!1 &1984098587
 GameObject:
@@ -3258,6 +3295,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
   spawnSpeed: 10
+  waveCount: 
   repeatCount: 1
 --- !u!1 &2144867042
 GameObject:

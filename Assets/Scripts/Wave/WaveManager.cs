@@ -39,11 +39,16 @@ public class WaveManager : MonoBehaviour {
 			int idx = enemies.FindIndex(obj => obj.name.Equals(wave.Enemy.name));
 
 			for (int i = 0; i < wave.repeatCount; i++) {
-				spawns.Add(new SpawnInfo(idx, wave.spawnSpeed));
+
+				SpawnInfo spawnInfo = new SpawnInfo(idx, wave.spawnSpeed);
+
+				if(wave.waveCount != null) {
+					spawnInfo.waveCount = wave.waveCount;
+				}
+
+				spawns.Add(spawnInfo);
 			}
 		}
-
-		Debug.Log("CHILD WAVES: " + wave.waves.Count);
 
 		for (int r = 0; r < wave.repeatCount; r++) {
 			for (int i = 0; i < wave.waves.Count; i++) {
@@ -57,6 +62,9 @@ public class WaveManager : MonoBehaviour {
 		cooldown -= Time.deltaTime;
 		if (cooldown <= 0) {
 			Spawn(spawns[0].go);
+			if (spawns[0].waveCount != null) {
+				HUD.Wave = spawns[0].waveCount;
+			}
 			cooldown = spawns[0].cooldown;
 			spawns.RemoveAt(0);
 
@@ -73,10 +81,12 @@ public class WaveManager : MonoBehaviour {
 	public struct SpawnInfo {
 		public int go;
 		public float cooldown;
+		public string waveCount;
 
 		public SpawnInfo(int go, float cd) {
 			this.go = go;
 			cooldown = cd;
+			waveCount = null;
 		}
 	}
 }
