@@ -2808,7 +2808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 5ef54596b177df646b2e0ed0365b820c, type: 2}
-  spawnSpeed: 3
+  spawnSpeed: 1.5
   repeatCount: 1
 --- !u!1 &1845565341
 GameObject:
