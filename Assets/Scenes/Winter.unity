@@ -117,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeadZone: 100
   CircleRadius: 1.5
+  placingTower: 0
 --- !u!114 &410707449
 MonoBehaviour:
   m_ObjectHideFlags: 0
