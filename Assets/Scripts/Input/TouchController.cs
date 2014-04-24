@@ -39,6 +39,7 @@ public class TouchController : MonoBehaviour {
 
 				int idx = GetIndex(e.position);
 
+				HUD.CostStyle = TowerSelectionMenu.Instance.towers[idx].Cost <= GameStats.Money;
 				HUD.TowerMessage = TowerSelectionMenu.Instance.towers[idx];
 
 				if (e.phase == TouchPhase.Ended) {

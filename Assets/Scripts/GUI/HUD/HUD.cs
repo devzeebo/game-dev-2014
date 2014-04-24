@@ -12,8 +12,23 @@ public class HUD : MonoBehaviour {
 
 	private Rect InfoCenterRect;
 
+	public static bool CostStyle {
+		set {
+			if (value) {
+				instance.costStyle = instance.AffordCostStyle;
+			}
+			else {
+				instance.costStyle = instance.NoAffordCostStyle;
+			}
+		}
+	}
+	private GUIStyle costStyle;
+
 	public GUIStyle RightAlignLabel;
 	public GUIStyle GameOverStyle;
+
+	public GUIStyle NoAffordCostStyle;
+	public GUIStyle AffordCostStyle;
 
 	// Use this for initialization
 	void Start () {
@@ -72,7 +87,8 @@ public class HUD : MonoBehaviour {
 
 		string message1 = "Cost:\nDamage:\nRange:";
 		string message2 = "\nSpeed:";
-		string stats1 = TowerMessage.Cost + "\n" + (Mathf.Round(TowerMessage.towerBase.GetComponent<TowerBase>().GetAttackDamage() * 100) / 100f) + "\n"+
+		string cost = "" + TowerMessage.Cost;
+		string stats1 = (Mathf.Round(TowerMessage.towerBase.GetComponent<TowerBase>().GetAttackDamage() * 100) / 100f) + "\n"+
 			TowerMessage.towerBase.GetComponent<TowerBase>().range;
 		string stats2 = "" + Mathf.Round(TowerMessage.towerBase.GetComponent<TowerBase>().GetAttackSpeed() * 100) / 100f;
 
@@ -98,12 +114,20 @@ public class HUD : MonoBehaviour {
 			InfoCenterRect.yMin,
 			this.Width(.1f, InfoCenterRect.width),
 			InfoCenterRect.height
+			), cost, costStyle);
+
+		GUI.Label(this.AnchoredRect(
+			GUIUtilities.LEFT_TOP,
+			InfoCenterRect.xMin,
+			InfoCenterRect.yMin + 18,
+			this.Width(.1f, InfoCenterRect.width),
+			InfoCenterRect.height
 			), stats1, RightAlignLabel);
 
 		GUI.Label(this.AnchoredRect(
 			GUIUtilities.LEFT_TOP,
 			InfoCenterRect.xMin + 125,
-			InfoCenterRect.yMin + 16,
+			InfoCenterRect.yMin + 18,
 			this.Width(.1f, InfoCenterRect.width),
 			InfoCenterRect.height
 			), stats2, RightAlignLabel);
