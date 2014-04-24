@@ -59,28 +59,33 @@ public class TowerBase : MonoBehaviour {
 	protected virtual void PerformUpdate() {
 		SortTargets();
 
-		int targetsRemaining = MaxTargets;
+		if (targets.Count > 0) {
 
-		if (!IsOnCooldown && targets.Count > 0) {
-			for (int i = 0; i < targets.Count; i++) {
+			module.gameObject.LookAt2D(targets[0]);
 
-				if (targetsRemaining == 0) {
-					break;
-				}
+			int targetsRemaining = MaxTargets;
 
-				if (targets[i] != null) {
-					if (AttackCheck(targets[i])) {
-						Attack(targets[i]);
-						targetsRemaining--;
+			if (!IsOnCooldown) {
+				for (int i = 0; i < targets.Count; i++) {
+
+					if (targetsRemaining == 0) {
+						break;
+					}
+
+					if (targets[i] != null) {
+						if (AttackCheck(targets[i])) {
+							Attack(targets[i]);
+							targetsRemaining--;
+						}
+					}
+					else {
+						targets.RemoveAt(i);
+						i--;
 					}
 				}
-				else {
-					targets.RemoveAt(i);
-					i--;
-				}
-			}
 
-			attackCooldown = GetAttackSpeed();
+				attackCooldown = GetAttackSpeed();
+			}
 		}
 	}
 
