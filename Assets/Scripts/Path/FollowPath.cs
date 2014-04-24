@@ -27,6 +27,10 @@ public class FollowPath : MonoBehaviour {
 
 				next = next.nextNode;
 				if (next == null) {
+					Pickup pickup = null;
+					if ((pickup = GetComponent<Pickup>()) != null) {
+						Destroy(pickup.Collectable);
+					}
 					Destroy(gameObject);
 					return 0;
 				}

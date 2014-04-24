@@ -7,7 +7,10 @@ public class PathNode {
 
     public PathNode nextNode;
 
-    public PathNode(Vector3 vector) {
+	public GameObject obj;
+
+    public PathNode(Vector3 vector, GameObject obj) {
         position = vector;
+		this.obj = obj;
     }
 }

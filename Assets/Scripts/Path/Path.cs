@@ -23,7 +23,7 @@ public class Path : MonoBehaviour {
 
         for (int x = 0; x < transform.childCount; x++) {
 			GameObject child = transform.GetChild(x).gameObject;
-            PathNode next = new PathNode(child.transform.position);
+            PathNode next = new PathNode(child.transform.position, child);
 
 			Vector2 childPos = grid.WorldToGridPosition(child.transform.position);
 			grid.PutAt((int)childPos.x, (int)childPos.y, child);
@@ -39,7 +39,7 @@ public class Path : MonoBehaviour {
 
         last = nodes[nodes.Count - 1];
         for (int x = nodes.Count - 2; x >= 0; x--) {
-            PathNode next = new PathNode(nodes[x].position);
+            PathNode next = new PathNode(nodes[x].position, nodes[x].obj);
             nodes.Add(next);
             last.nextNode = next;
 			last = next;
