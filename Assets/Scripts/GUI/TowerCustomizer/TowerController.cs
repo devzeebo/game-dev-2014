@@ -85,7 +85,11 @@ public class TowerController : MonoBehaviour {
                 SelectSlot(i);
             }
         }
-        GUI.Box(this.CenteredRect(this.Width(.6f), this.Height(.33f), this.Width(.15f), this.Height(.33f)), "Tower Stats \n\nCost: " + WorkingTower.Cost + "\nDamage: " + WorkingTower.towerBase.GetComponent<TowerBase>().GetAttackDamage() + "\nSpeed: "+WorkingTower.towerBase.GetComponent<TowerBase>().GetAttackSpeed() + "\nRange: " + "\n");
+        GUI.Box(this.CenteredRect(this.Width(.6f), this.Height(.33f), this.Width(.15f), this.Height(.33f)), 
+		        "Tower Stats \n\nCost: " + WorkingTower.Cost + 
+		        "\nDamage: " + WorkingTower.towerBase.GetComponent<TowerBase>().GetAttackDamage() + 
+		        "\nSpeed: "+WorkingTower.towerBase.GetComponent<TowerBase>().GetAttackSpeed() + 
+		        "\nRange: " + WorkingTower.towerBase.GetComponent<TowerBase>().range + "\n");
 
         /*\n
         // Use Tower Button

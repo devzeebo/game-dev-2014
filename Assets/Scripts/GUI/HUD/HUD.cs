@@ -72,7 +72,8 @@ public class HUD : MonoBehaviour {
 
 		string message1 = "Cost:\nDamage:\nRange:";
 		string message2 = "\nSpeed:";
-		string stats1 = TowerMessage.Cost + "\n" + Mathf.Round(TowerMessage.towerBase.GetComponent<TowerBase>().GetAttackDamage() * 100) / 100f;
+		string stats1 = TowerMessage.Cost + "\n" + (Mathf.Round(TowerMessage.towerBase.GetComponent<TowerBase>().GetAttackDamage() * 100) / 100f) + "\n"+
+			TowerMessage.towerBase.GetComponent<TowerBase>().range;
 		string stats2 = "" + Mathf.Round(TowerMessage.towerBase.GetComponent<TowerBase>().GetAttackSpeed() * 100) / 100f;
 
 		GUI.Label(this.AnchoredRect(
