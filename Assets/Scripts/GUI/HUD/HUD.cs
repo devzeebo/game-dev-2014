@@ -113,12 +113,19 @@ public class HUD : MonoBehaviour {
 			), Wave, RightAlignLabel);
 	}
 
+	private float gameOverCountdown = 5;
+
 	private void ShowGameOver(){
+		gameOverCountdown-= Time.deltaTime;
 		GUI.Label (this.AnchoredRect (
 			GUIUtilities.MID_MID,
 			this.Width(.5f),
 			this.Height(.5f),
 			this.Width(.5f), this.Height(.5f)),
 			"Game Over", GameOverStyle);
+		if(gameOverCountdown<=0) {
+			Application.LoadLevel("Level Select");
+		}
+
 	}
 }
