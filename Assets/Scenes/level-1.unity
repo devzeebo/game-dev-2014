@@ -247,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
-  spawnSpeed: 10
+  spawnSpeed: 5
   waveCount: 
   repeatCount: 1
 --- !u!1001 &93853970
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
-  spawnSpeed: 10
+  spawnSpeed: 5
   waveCount: 
   repeatCount: 1
 --- !u!1 &232795404
@@ -421,7 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
-  spawnSpeed: 10
+  spawnSpeed: 5
   waveCount: 
   repeatCount: 1
 --- !u!1 &256384457
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
-  spawnSpeed: 10
+  spawnSpeed: 5
   waveCount: 
   repeatCount: 1
 --- !u!1 &778104002
@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
-  spawnSpeed: 10
+  spawnSpeed: 5
   waveCount: 
   repeatCount: 1
 --- !u!1001 &820958248
@@ -1589,7 +1589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
-  spawnSpeed: 10
+  spawnSpeed: 5
   waveCount: 
   repeatCount: 1
 --- !u!1001 &960798987
@@ -1989,7 +1989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
-  spawnSpeed: 10
+  spawnSpeed: 5
   waveCount: 
   repeatCount: 1
 --- !u!1 &1141053070
@@ -2117,7 +2117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
-  spawnSpeed: 10
+  spawnSpeed: 5
   waveCount: 
   repeatCount: 1
 --- !u!1 &1377860790
@@ -2210,7 +2210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
-  spawnSpeed: 10
+  spawnSpeed: 5
   waveCount: 
   repeatCount: 1
 --- !u!1001 &1462629577
@@ -2845,6 +2845,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 5ef54596b177df646b2e0ed0365b820c, type: 2}
   spawnSpeed: 1.5
+  waveCount: 
   repeatCount: 1
 --- !u!1 &1845565341
 GameObject:
@@ -3299,7 +3300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 362a59a3064ecb04481c9325d39756fa, type: 2}
-  spawnSpeed: 10
+  spawnSpeed: 5
   waveCount: 
   repeatCount: 1
 --- !u!1 &2144867042
