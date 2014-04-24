@@ -260,6 +260,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: b382ec0720438c04d9775e348cfd2a28, type: 2}
   spawnSpeed: 2
+  waveCount: 
   repeatCount: 1
 --- !u!1 &236164252
 GameObject:
@@ -603,6 +604,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: 
   repeatCount: 10
 --- !u!1 &516826942
 GameObject:
@@ -1078,6 +1080,65 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
+  GameOverStyle:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 2800000, guid: 0d771bf4434e708438e6c9eaaaf90538, type: 3}
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_Alignment: 4
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
 --- !u!114 &798481380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,6 +1255,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 56d007e2d960ab84ca89f7e4599ef85b, type: 2}
   spawnSpeed: .5
+  waveCount: 
   repeatCount: 1
 --- !u!1 &855874822
 GameObject:
@@ -1336,6 +1398,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: b382ec0720438c04d9775e348cfd2a28, type: 2}
   spawnSpeed: 2
+  waveCount: 
   repeatCount: 1
 --- !u!1001 &1042311764
 Prefab:
@@ -1467,6 +1530,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 56d007e2d960ab84ca89f7e4599ef85b, type: 2}
   spawnSpeed: .5
+  waveCount: 
   repeatCount: 1
 --- !u!4 &1117540341
 Transform:
@@ -1770,6 +1834,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 235c69ab6ad26564aa66553db3a17d33, type: 2}
   spawnSpeed: 0
+  waveCount: 
   repeatCount: 1
 --- !u!1 &1449435337
 GameObject:
@@ -1965,6 +2030,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: 
   repeatCount: 5
 --- !u!1001 &1498120731
 Prefab:
@@ -2631,6 +2697,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: 
   repeatCount: 5
 --- !u!1 &2025899676
 GameObject:
