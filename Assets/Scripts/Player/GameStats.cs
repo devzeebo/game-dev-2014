@@ -19,8 +19,8 @@ public class GameStats : MonoBehaviour {
 		Cash += CashPerSecond * Time.deltaTime;
 	}
 
-	void OnGUI() {
-		GUI.Label(this.CenteredRect(this.Width(.8f), this.Height(.1f), this.Width(.1f), this.Height(.1f)), "" + ((int)Cash));
+	public static int Money {
+		get { return (int)instance.Cash; }
 	}
 
 	public static void CollectBounty(float amount) {

@@ -13,8 +13,7 @@ public static class Utilities {
         return pos;
 	}
 
-	public static Vector2 WorldToScreen (Vector3 world)
-	{
+	public static Vector2 WorldToScreen (Vector3 world) {
 		return Camera.main.WorldToScreenPoint(world);
 	}
 
