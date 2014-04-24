@@ -9,10 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 114: {fileID: 11400000}
-  - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: fire
+  m_Name: Cookie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,36 +23,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.00837517, y: 0, z: -10}
-  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
+  m_LocalPosition: {x: 11.7786236, y: 1.22173107, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67e0f9c90805b314484d2002ad0dfb25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrototype: {fileID: 100000, guid: 5aae3e7b20dd14e18bb517fc2528f1eb, type: 2}
-  attackDamage: .25
-  attackSpeedMultiplier: .699999988
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea6f0ab2aea45145b3eab9e714c67f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cost: 20
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -73,11 +45,11 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 3
-  m_SortingOrder: 2
-  m_SortingLayerID: 2689663855
-  m_Sprite: {fileID: 21300000, guid: 26aac84907d07c1498f161a143a8fcc6, type: 3}
-  m_Color: {r: 1, g: .145098045, b: 0, a: 1}
+  m_SortingLayer: 2
+  m_SortingOrder: 10
+  m_SortingLayerID: 286609683
+  m_Sprite: {fileID: 21300000, guid: bdad2121d0d5741db8f4d86fac1365ce, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
