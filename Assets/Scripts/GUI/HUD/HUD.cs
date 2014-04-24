@@ -27,6 +27,11 @@ public class HUD : MonoBehaviour {
 
 		InfoCenterRect = this.CenteredRect(this.Width(.5f), botLeft.y / 2, botRight.x - botLeft.x, botLeft.y);
 	}
+
+	void OnLevelWasLoaded(int x) {
+		gameOver = false;
+		gameOverCountdown = 5;
+	}
 	
 	// Update is called once per frame
 	void Update () {
