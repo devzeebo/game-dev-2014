@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 0}
-  speed: .600000024
+  speed: 1
   nodeCount: 0
 --- !u!114 &11400004
 MonoBehaviour:
