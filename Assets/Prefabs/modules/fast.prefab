@@ -52,9 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9eba272fd57247439ac87212b068ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: efc43a94aa7e4494dbdd1e2c9de4bf4e, type: 2}
-  attackSpeed: 100
-  attackDamageMultiplier: 1
+  weapon: {fileID: 11400000, guid: c1309ad0211b03f419c81b0d07622139, type: 2}
+  attackSpeed: 120
+  attackDamageMultiplier: .75
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

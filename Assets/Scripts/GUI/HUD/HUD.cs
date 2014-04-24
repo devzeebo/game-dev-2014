@@ -5,7 +5,8 @@ public class HUD : MonoBehaviour {
 
 	private static HUD instance;
 
-	public string message;
+	public static string message;
+	public static CustomTower TowerMessage;
 
 	private Rect InfoCenterRect;
 
@@ -48,10 +49,48 @@ public class HUD : MonoBehaviour {
 			InfoCenterRect.height
 			), "" + GameStats.Money, RightAlignLabel);
 
-
+		if (TowerMessage != null) {
+			ShowTowerMessage();
+		}
 	}
 
-	private void TowerMessage() {
+	private void ShowTowerMessage() {
 
+		string message1 = "Cost:\nDamage:\nRange:";
+		string message2 = "\nSpeed:";
+		string stats1 = TowerMessage.Cost + "\n" + Mathf.Round(TowerMessage.towerBase.GetComponent<TowerBase>().GetAttackDamage() * 100) / 100f;
+		string stats2 = "" + Mathf.Round(TowerMessage.towerBase.GetComponent<TowerBase>().GetAttackSpeed() * 100) / 100f;
+
+		GUI.Label(this.AnchoredRect(
+			GUIUtilities.LEFT_TOP,
+			InfoCenterRect.xMin,
+			InfoCenterRect.yMin,
+			this.Width(.1f, InfoCenterRect.width),
+			InfoCenterRect.height
+			), message1);
+
+		GUI.Label(this.AnchoredRect(
+			GUIUtilities.LEFT_TOP,
+			InfoCenterRect.xMin + 125,
+			InfoCenterRect.yMin,
+			this.Width(.1f, InfoCenterRect.width),
+			InfoCenterRect.height
+			), message2);
+
+		GUI.Label(this.AnchoredRect(
+			GUIUtilities.LEFT_TOP,
+			InfoCenterRect.xMin,
+			InfoCenterRect.yMin,
+			this.Width(.1f, InfoCenterRect.width),
+			InfoCenterRect.height
+			), stats1, RightAlignLabel);
+
+		GUI.Label(this.AnchoredRect(
+			GUIUtilities.LEFT_TOP,
+			InfoCenterRect.xMin + 125,
+			InfoCenterRect.yMin + 16,
+			this.Width(.1f, InfoCenterRect.width),
+			InfoCenterRect.height
+			), stats2, RightAlignLabel);
 	}
 }

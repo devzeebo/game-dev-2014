@@ -40,10 +40,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf98338130e7a4bbc9c04de30a707f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  module: {fileID: 0}
+  module: {fileID: 11400002, guid: 2db371097fc38894caf4a6f7d5888a01, type: 2}
   targets: []
-  attackSpeedMultiplier: 1
-  attackDamageMultiplier: 1
+  attackSpeedMultiplier: .800000012
+  attackDamageMultiplier: 1.20000005
   attackCooldown: 0
   range: 3
   MaxTargets: 1

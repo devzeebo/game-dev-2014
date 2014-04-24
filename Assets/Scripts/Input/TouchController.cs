@@ -35,17 +35,25 @@ public class TouchController : MonoBehaviour {
 				ShowTowers();
 				placingTower = true;
 			}
-			if (placingTower && e.phase == TouchPhase.Ended) {
-				if (Vector3.Distance(e.position, touchPosition) > DeadZone) {
+			if (placingTower) {
 
-					CustomTower tower = TowerSelectionMenu.Instance.towers[GetIndex(e.position)];
-					if (GameStats.BuyTower(tower.Cost)) {
-						bool placed = grid.PlaceTower(tower, touchPosition);
+				int idx = GetIndex(e.position);
+
+				HUD.TowerMessage = TowerSelectionMenu.Instance.towers[idx];
+
+				if (e.phase == TouchPhase.Ended) {
+					if (Vector3.Distance(e.position, touchPosition) > DeadZone) {
+
+						CustomTower tower = TowerSelectionMenu.Instance.towers[idx];
+						if (GameStats.BuyTower(tower.Cost)) {
+							bool placed = grid.PlaceTower(tower, touchPosition);
+						}
 					}
+
+					HideTowers();
+					placingTower = false;
+					HUD.TowerMessage = null;
 				}
-				
-				HideTowers();
-				placingTower = false;
 			}
 		}
 	}

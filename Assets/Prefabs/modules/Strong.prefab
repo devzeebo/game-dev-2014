@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: efc43a94aa7e4494dbdd1e2c9de4bf4e, type: 2}
-  attackSpeed: 100
+  attackSpeed: 80
   attackDamageMultiplier: 2
 --- !u!114 &11400002
 MonoBehaviour:
