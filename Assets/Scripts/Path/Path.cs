@@ -4,11 +4,16 @@ using System.Collections.Generic;
 
 public class Path : MonoBehaviour {
 
-    private List<PathNode> nodes;
+	[HideInInspector]
+    public List<PathNode> nodes;
 
 	public GameObject PathTemplate;
 
 	private Grid grid;
+
+	public int Count {
+		get { return nodes.Count; }
+	}
 
 	// Use this for initialization
 	void Start () {

@@ -18,6 +18,11 @@ public class Pickup : MonoBehaviour {
 			Collectable = other.gameObject;
 			Collectable.transform.parent = transform;
 			Collectable.transform.localScale = new Vector3(1, 1, 0);
+
+			FollowPath path = null;
+			if ((path = GetComponent<FollowPath>()) != null) {
+				path.Return();
+			}
 		}
 	}
 }

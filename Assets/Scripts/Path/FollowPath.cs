@@ -3,11 +3,14 @@ using System.Collections;
 
 public class FollowPath : MonoBehaviour {
 
-	private Path path;
+	[HideInInspector]
+	public Path path;
 
 	private PathNode next;
 
 	public float speed;
+
+	public int nodeCount = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +28,7 @@ public class FollowPath : MonoBehaviour {
 			
 			gameObject.MoveUntil(speed, Time.deltaTime, distance, () => {
 
+				nodeCount++;
 				next = next.nextNode;
 				if (next == null) {
 					Pickup pickup = null;
@@ -38,6 +42,17 @@ public class FollowPath : MonoBehaviour {
 				gameObject.LookAt2D(next.position);
 				return Vector2.Distance(gameObject.transform.position, next.position);
 			});
+		}
+	}
+
+	public bool isReturning() {
+		return nodeCount > path.Count / 2;
+	}
+
+	public void Return() {
+		if (!isReturning()) {
+			next = path.nodes[path.Count - nodeCount];
+			gameObject.LookAt2D(next.position);
 		}
 	}
 }
