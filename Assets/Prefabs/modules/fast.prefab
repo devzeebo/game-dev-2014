@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea6f0ab2aea45145b3eab9e714c67f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 5
+  Cost: 25
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9eba272fd57247439ac87212b068ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: c1309ad0211b03f419c81b0d07622139, type: 2}
-  attackSpeed: 120
+  weapon: {fileID: 11400000, guid: d17da94009a5ddf4aafb8163af30276c, type: 2}
+  attackSpeed: 2
   attackDamageMultiplier: .75
 --- !u!212 &21200000
 SpriteRenderer:
