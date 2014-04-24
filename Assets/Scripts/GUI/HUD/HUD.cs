@@ -8,10 +8,12 @@ public class HUD : MonoBehaviour {
 	public static string message;
 	public static CustomTower TowerMessage;
 	public static string Wave;
+	public static bool gameOver = false;
 
 	private Rect InfoCenterRect;
 
 	public GUIStyle RightAlignLabel;
+	public GUIStyle GameOverStyle;
 
 	// Use this for initialization
 	void Start () {
@@ -55,6 +57,9 @@ public class HUD : MonoBehaviour {
 		}
 		if (Wave != null) {
 			ShowWaveMessage();
+		}
+		if (gameOver){
+			ShowGameOver();
 		}
 	}
 
@@ -106,5 +111,14 @@ public class HUD : MonoBehaviour {
 			this.Width(.07f, InfoCenterRect.width),
 			InfoCenterRect.height
 			), Wave, RightAlignLabel);
+	}
+
+	private void ShowGameOver(){
+		GUI.Label (this.AnchoredRect (
+			GUIUtilities.MID_MID,
+			this.Width(.5f),
+			this.Height(.5f),
+			this.Width(.5f), this.Height(.5f)),
+			"Game Over", GameOverStyle);
 	}
 }

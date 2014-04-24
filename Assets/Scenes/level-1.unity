@@ -1677,6 +1677,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 235c69ab6ad26564aa66553db3a17d33, type: 2}
   spawnSpeed: 2
+  waveCount: 
   repeatCount: 1
 --- !u!1 &1016243711
 GameObject:
@@ -1719,6 +1720,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 56d007e2d960ab84ca89f7e4599ef85b, type: 2}
   spawnSpeed: .5
+  waveCount: 
   repeatCount: 1
 --- !u!1 &1026549793
 GameObject:
@@ -3017,6 +3019,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 0}
   spawnSpeed: 0
+  waveCount: 
   repeatCount: 10
 --- !u!1 &2008617469
 GameObject:
@@ -3110,6 +3113,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: a31aaba2e0a2ce8448309ee2a0dc8175, type: 2}
   spawnSpeed: 1
+  waveCount: 
   repeatCount: 1
 --- !u!1 &2072345438
 GameObject:
@@ -3202,6 +3206,7 @@ MonoBehaviour:
   waves: []
   Enemy: {fileID: 100002, guid: 235c69ab6ad26564aa66553db3a17d33, type: 2}
   spawnSpeed: 1
+  waveCount: 
   repeatCount: 1
 --- !u!1 &2094104504
 GameObject:
@@ -3308,7 +3313,6 @@ GameObject:
   - 114: {fileID: 2144867046}
   - 114: {fileID: 2144867045}
   - 114: {fileID: 2144867044}
-  - 114: {fileID: 2144867043}
   - 114: {fileID: 2144867048}
   - 114: {fileID: 2144867049}
   - 114: {fileID: 2144867050}
@@ -3319,17 +3323,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2144867043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2144867042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa2e581ce25b4f94b950d6c7ba798a11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2144867044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3455,6 +3448,65 @@ MonoBehaviour:
     m_FontSize: 14
     m_FontStyle: 0
     m_Alignment: 2
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+  GameOverStyle:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_Alignment: 4
     m_WordWrap: 0
     m_RichText: 1
     m_TextClipping: 0

@@ -24,6 +24,8 @@ public class JunkSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(GameObject.FindGameObjectsWithTag("collectable").Length == 0) {
+			HUD.gameOver = true;
+		}
 	}
 }
