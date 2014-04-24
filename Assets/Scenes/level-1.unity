@@ -1656,7 +1656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 235c69ab6ad26564aa66553db3a17d33, type: 2}
-  spawnSpeed: .5
+  spawnSpeed: 2
   repeatCount: 1
 --- !u!1 &1016243711
 GameObject:
@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 56d007e2d960ab84ca89f7e4599ef85b, type: 2}
-  spawnSpeed: 1
+  spawnSpeed: .5
   repeatCount: 1
 --- !u!1 &1026549793
 GameObject:
@@ -3072,7 +3072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 235c69ab6ad26564aa66553db3a17d33, type: 2}
-  spawnSpeed: .5
+  spawnSpeed: 1
   repeatCount: 1
 --- !u!1 &2072345438
 GameObject:
@@ -3164,7 +3164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves: []
   Enemy: {fileID: 100002, guid: 235c69ab6ad26564aa66553db3a17d33, type: 2}
-  spawnSpeed: .5
+  spawnSpeed: 1
   repeatCount: 1
 --- !u!1 &2094104504
 GameObject:
