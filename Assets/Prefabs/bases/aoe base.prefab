@@ -42,8 +42,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   module: {fileID: 11400000, guid: 380cf7f7b0179c9478d444cda9ce1bec, type: 2}
   targets: []
-  attackSpeedMultiplier: .800000012
-  attackDamageMultiplier: 1.20000005
+  attackSpeedMultiplier: .400000006
+  attackDamageMultiplier: 1
   attackCooldown: 0
   range: 3
   MaxTargets: 1
